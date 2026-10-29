@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { DiaEstudo } from '../types'
-import { precisaRevisar, prioridade, revisoesDe, revisoesFeitas, revisoesPendentes } from './revisoes'
+import { agendaSemana, precisaRevisar, prioridade, revisoesDe, revisoesFeitas, revisoesPendentes } from './revisoes'
 
 const dia = (p: Partial<DiaEstudo> = {}): DiaEstudo => ({
   id: 'dia-01', n: 1, data: '2026-10-01', disciplina: 'X', conteudo: '', minPdf: 60, minVideo: 60,
@@ -38,5 +38,13 @@ describe('revisoes', () => {
     expect(precisaRevisar(dia({ acertos: 50 }), 70)).toBe(true)
     expect(precisaRevisar(dia({ acertos: 80 }), 70)).toBe(false)
     expect(precisaRevisar(dia({ acertos: 50, status: 'Pendente' }), 70)).toBe(false)
+  })
+  it('agendaSemana agrupa por dia e põe as vencidas em hoje', () => {
+    const d = dia({ concluidoEm: '2026-10-01' }) // vence 08/10, 15/10, 31/10
+    const ag = agendaSemana(revisoesPendentes([d], iv), '2026-10-10', 7)
+    expect(ag).toHaveLength(7)
+    expect(ag[0].itens.map((r) => r.chave)).toEqual(['r7'])
+    expect(ag[5].data).toBe('2026-10-15')
+    expect(ag[5].itens.map((r) => r.chave)).toEqual(['r14'])
   })
 })

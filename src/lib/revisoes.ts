@@ -34,3 +34,11 @@ export const revisoesFeitas = (dias: DiaEstudo[]) =>
 // Marcado à mão ou com % de acertos abaixo do limite.
 export const precisaRevisar = (d: DiaEstudo, limite: number) =>
   d.status === 'Concluído' && (!!d.revisar || (d.acertos !== null && d.acertos < limite))
+
+// Revisões por dia, de hoje até hoje+dias-1. A célula de hoje inclui as vencidas (o que precisa ser feito agora).
+export function agendaSemana(pendentes: RevisaoDevida[], hoje: string, dias = 7) {
+  return Array.from({ length: dias }, (_, i) => {
+    const data = addDias(hoje, i)
+    return { data, itens: pendentes.filter((r) => (i === 0 ? r.vence <= data : r.vence === data)) }
+  })
+}
