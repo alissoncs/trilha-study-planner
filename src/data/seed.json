@@ -1,0 +1,1622 @@
+[
+ {
+  "id": "dia-01",
+  "n": 1,
+  "data": "2026-09-29",
+  "disciplina": "Língua Portuguesa",
+  "conteudo": "Leitura PDF + Aulas 01 a 03: Interpretação de Texto, Tipologia/Gênero Textual (Partes 1 e 2) e Ortografia (Prof. Patrick)",
+  "minPdf": 60,
+  "minVideo": 122,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-02",
+  "n": 2,
+  "data": "2026-09-30",
+  "disciplina": "Português & RLM",
+  "conteudo": "Leitura PDF + Aula 04 Português (Acentuação Gráfica) + Aula 01 RLM (Conjuntos Numéricos 1 e 2)",
+  "minPdf": 60,
+  "minVideo": 135,
+  "relevancia": "Média",
+  "status": "Em Andamento",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-03",
+  "n": 3,
+  "data": "2026-10-01",
+  "disciplina": "Raciocínio Lógico-Matemático",
+  "conteudo": "Leitura PDF + Aula 02 RLM: Operações Básicas (Partes 1, 2 e 3) + Exercícios de Fixação",
+  "minPdf": 60,
+  "minVideo": 136,
+  "relevancia": "Média",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-04",
+  "n": 4,
+  "data": "2026-10-02",
+  "disciplina": "Raciocínio Lógico-Matemático",
+  "conteudo": "Leitura PDF + Aulas 03 e 04 RLM: Frações (Partes 1, 2 e 3) e MMC/MDC",
+  "minPdf": 60,
+  "minVideo": 140,
+  "relevancia": "Média",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-05",
+  "n": 5,
+  "data": "2026-10-03",
+  "disciplina": "Língua Portuguesa",
+  "conteudo": "Leitura PDF + Aula 05: Pontuação (Funcionalidades + Emprego da Vírgula - Profª. Luana)",
+  "minPdf": 60,
+  "minVideo": 132,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-06",
+  "n": 6,
+  "data": "2026-10-04",
+  "disciplina": "Língua Portuguesa & RLM",
+  "conteudo": "Leitura PDF + Aulas 05 e 06 RLM: Razão, Proporção e Regra de Três Simples",
+  "minPdf": 60,
+  "minVideo": 143,
+  "relevancia": "Média",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-07",
+  "n": 7,
+  "data": "2026-10-05",
+  "disciplina": "Revisão & Questões (R7/R14)",
+  "conteudo": "Banco de Questões Semanal 01 + Resolução comentada Português e RLM",
+  "minPdf": 30,
+  "minVideo": 150,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-08",
+  "n": 8,
+  "data": "2026-10-06",
+  "disciplina": "Raciocínio Lógico-Matemático",
+  "conteudo": "Leitura PDF + Aulas 07 e 08 RLM: Regra de Três Composta e Divisão Proporcional",
+  "minPdf": 60,
+  "minVideo": 137,
+  "relevancia": "Média",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-09",
+  "n": 9,
+  "data": "2026-10-07",
+  "disciplina": "Língua Portuguesa",
+  "conteudo": "Leitura PDF + Aula 06: Morfologia (Substantivos, Adjetivos, Numerais e Artigos)",
+  "minPdf": 60,
+  "minVideo": 141,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-10",
+  "n": 10,
+  "data": "2026-10-08",
+  "disciplina": "Língua Portuguesa",
+  "conteudo": "Leitura PDF + Aula 06: Morfologia (Pronomes Partes I, II e III + Verbos)",
+  "minPdf": 60,
+  "minVideo": 145,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-11",
+  "n": 11,
+  "data": "2026-10-09",
+  "disciplina": "Língua Portuguesa & RLM",
+  "conteudo": "Leitura PDF + Aula 06 Morfologia (Conjunções, Advérbios) + Aula 09 RLM (Porcentagem 1 e 2)",
+  "minPdf": 60,
+  "minVideo": 148,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-12",
+  "n": 12,
+  "data": "2026-10-10",
+  "disciplina": "Língua Portuguesa & RLM",
+  "conteudo": "Leitura PDF + Aulas 07 e 08 Português (Vozes Verbais, Flexão) + Aula 10 RLM (Equações 1º Grau)",
+  "minPdf": 60,
+  "minVideo": 135,
+  "relevancia": "Média",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-13",
+  "n": 13,
+  "data": "2026-10-11",
+  "disciplina": "Raciocínio Lógico-Matemático",
+  "conteudo": "Leitura PDF + Aulas 11 RLM (Sistemas) e Aulas 01/02 RLM Gustavo (Sentenças e Proposições)",
+  "minPdf": 60,
+  "minVideo": 140,
+  "relevancia": "Média",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-14",
+  "n": 14,
+  "data": "2026-10-12",
+  "disciplina": "Revisão & Questões (R7/R14)",
+  "conteudo": "Banco de Questões Semanal 02 + Redação Discursiva (Profª. Luana Porto)",
+  "minPdf": 30,
+  "minVideo": 160,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-15",
+  "n": 15,
+  "data": "2026-10-13",
+  "disciplina": "Raciocínio Lógico-Matemático",
+  "conteudo": "Leitura PDF + Aulas 03 e 04 RLM Gustavo: Proposições Compostas e Conectivos (Partes 1 a 4)",
+  "minPdf": 60,
+  "minVideo": 140,
+  "relevancia": "Média",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-16",
+  "n": 16,
+  "data": "2026-10-14",
+  "disciplina": "Raciocínio Lógico-Matemático",
+  "conteudo": "Leitura PDF + Aulas 04 (Cont.) e 05 RLM: Condicional, Bicondicional e Negações (Partes 1 a 4)",
+  "minPdf": 60,
+  "minVideo": 145,
+  "relevancia": "Média",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-17",
+  "n": 17,
+  "data": "2026-10-15",
+  "disciplina": "Língua Portuguesa",
+  "conteudo": "Leitura PDF + Aulas 09 e 10: Regência Nominal/Verbal + Crase (Partes I, II e III)",
+  "minPdf": 60,
+  "minVideo": 140,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-18",
+  "n": 18,
+  "data": "2026-10-16",
+  "disciplina": "Língua Portuguesa",
+  "conteudo": "Leitura PDF + Aulas 11 e 12: Coesão, Coerência e Concordância Nominal/Verbal",
+  "minPdf": 60,
+  "minVideo": 145,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-19",
+  "n": 19,
+  "data": "2026-10-17",
+  "disciplina": "Língua Portuguesa & RLM",
+  "conteudo": "Leitura PDF + Aulas 13 a 15 Português (Morfossintaxe, Reescrita, Figuras) + Álgebra de Proposições",
+  "minPdf": 60,
+  "minVideo": 140,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-20",
+  "n": 20,
+  "data": "2026-10-18",
+  "disciplina": "Língua Portuguesa",
+  "conteudo": "Leitura PDF + Aulas 16 a 18: Tipos de Argumento, Redação Oficial (Padrão Ofício/Atributos)",
+  "minPdf": 60,
+  "minVideo": 140,
+  "relevancia": "Média",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-21",
+  "n": 21,
+  "data": "2026-10-19",
+  "disciplina": "Revisão & Questões (R7/R14/R30)",
+  "conteudo": "Banco de Questões Semanal 03 + Simulado Geral focado em Português e RLM",
+  "minPdf": 30,
+  "minVideo": 150,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-22",
+  "n": 22,
+  "data": "2026-10-20",
+  "disciplina": "Direito Constitucional",
+  "conteudo": "Leitura PDF + Aulas 01 a 03: Princípios Fundamentais, Aplicabilidade das Normas e Direitos Individuais",
+  "minPdf": 60,
+  "minVideo": 140,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-23",
+  "n": 23,
+  "data": "2026-10-21",
+  "disciplina": "Direito Constitucional",
+  "conteudo": "Leitura PDF + Aula 03 (Cont.): Direitos Sociais, Nacionalidade, Direitos Políticos e Partidos",
+  "minPdf": 60,
+  "minVideo": 135,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-24",
+  "n": 24,
+  "data": "2026-10-22",
+  "disciplina": "Direito Constitucional",
+  "conteudo": "Leitura PDF + Aula 04: Organização Político-Administrativa do Estado (Partes 01 a 06)",
+  "minPdf": 60,
+  "minVideo": 145,
+  "relevancia": "Alta",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-25",
+  "n": 25,
+  "data": "2026-10-23",
+  "disciplina": "Direito do Trabalho (NÚCLEO DURO)",
+  "conteudo": "Leitura PDF + Aula 01 e 02: Conceito, Fontes, Princípios e Direito Constitucional do Trabalho",
+  "minPdf": 60,
+  "minVideo": 135,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-26",
+  "n": 26,
+  "data": "2026-10-24",
+  "disciplina": "Direito do Trabalho (NÚCLEO DURO)",
+  "conteudo": "Leitura PDF + Aulas 03 e 04: Relação de Trabalho, Empregado/Empregador e Contrato de Trabalho",
+  "minPdf": 60,
+  "minVideo": 145,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-27",
+  "n": 27,
+  "data": "2026-10-25",
+  "disciplina": "Direito do Trabalho (NÚCLEO DURO)",
+  "conteudo": "Leitura PDF + Aulas 05 e 06: Alteração, Suspensão, Interrupção e Término do Contrato de Trabalho",
+  "minPdf": 60,
+  "minVideo": 140,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-28",
+  "n": 28,
+  "data": "2026-10-26",
+  "disciplina": "Revisão & Questões (R7/R14/R30)",
+  "conteudo": "Banco de Questões Semanal 04 + Aula Especial de Direito do Trabalho (Prof. Luiz Henrique)",
+  "minPdf": 30,
+  "minVideo": 150,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-29",
+  "n": 29,
+  "data": "2026-10-27",
+  "disciplina": "Direito Constitucional & Adm.",
+  "conteudo": "Leitura PDF + Lei 8.112/90 (Aula 01): Provimento, Nomeação, Remoção, Vacância e Direitos",
+  "minPdf": 60,
+  "minVideo": 135,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-30",
+  "n": 30,
+  "data": "2026-10-28",
+  "disciplina": "Direito Administrativo",
+  "conteudo": "Leitura PDF + Lei 8.112/90 (Cont.): Regime Disciplinar, PAD + Lei de Improbidade (Lei 8.429/92)",
+  "minPdf": 60,
+  "minVideo": 140,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-31",
+  "n": 31,
+  "data": "2026-10-29",
+  "disciplina": "Direito Administrativo",
+  "conteudo": "Leitura PDF + Aula 03 e 04: Processo Administrativo (Lei 9.784) + Licitações (Lei 14.133/21)",
+  "minPdf": 60,
+  "minVideo": 145,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-32",
+  "n": 32,
+  "data": "2026-10-30",
+  "disciplina": "Direito Administrativo",
+  "conteudo": "Leitura PDF + Licitações (Cont. Modalidades, Inexigibilidade) + LGPD (Lei 13.709/18)",
+  "minPdf": 60,
+  "minVideo": 135,
+  "relevancia": "Alta",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-33",
+  "n": 33,
+  "data": "2026-10-31",
+  "disciplina": "Legislação Específica & CNJ",
+  "conteudo": "Leitura PDF + Estatuto da Pessoa com Deficiência (Lei 13.146) + Resolução CNJ 400/2021",
+  "minPdf": 60,
+  "minVideo": 140,
+  "relevancia": "Média",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-34",
+  "n": 34,
+  "data": "2026-11-01",
+  "disciplina": "Gestão Pública & Org.",
+  "conteudo": "Leitura PDF + Organizações Formais, Departamentalização, Gestão Pública x Privada e Princípios",
+  "minPdf": 60,
+  "minVideo": 135,
+  "relevancia": "Média",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-35",
+  "n": 35,
+  "data": "2026-11-02",
+  "disciplina": "Revisão & Questões (R7/R14/R30)",
+  "conteudo": "Banco de Questões Semanal 05 + Revisão de Lei Seca (Lei 8.112/90 e Lei 14.133/21)",
+  "minPdf": 30,
+  "minVideo": 150,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-36",
+  "n": 36,
+  "data": "2026-11-03",
+  "disciplina": "Gestão Pública",
+  "conteudo": "Leitura PDF + Gestão de Resultados, Comunicação, Redes Organizacionais e Gestão do Desempenho",
+  "minPdf": 60,
+  "minVideo": 140,
+  "relevancia": "Média",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-37",
+  "n": 37,
+  "data": "2026-11-04",
+  "disciplina": "Gestão Pública",
+  "conteudo": "Leitura PDF + Processos Organizacionais, Gestão de Riscos, Excelência nos Serviços e Planejamento",
+  "minPdf": 60,
+  "minVideo": 145,
+  "relevancia": "Média",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-38",
+  "n": 38,
+  "data": "2026-11-05",
+  "disciplina": "Gestão de Pessoas & Processos",
+  "conteudo": "Leitura PDF + Gestão de Pessoas (Partes I a V) + Mapeamento e Análise de Processos",
+  "minPdf": 60,
+  "minVideo": 140,
+  "relevancia": "Média",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-39",
+  "n": 39,
+  "data": "2026-11-06",
+  "disciplina": "Gestão de Projetos & Materiais",
+  "conteudo": "Leitura PDF + Gestão por Projetos (Partes I a VIII) + Administração de Materiais",
+  "minPdf": 60,
+  "minVideo": 145,
+  "relevancia": "Média",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-40",
+  "n": 40,
+  "data": "2026-11-07",
+  "disciplina": "Direito Constitucional",
+  "conteudo": "Leitura PDF + Poder Executivo e Poder Legislativo (Estrutura, Processo Legislativo e Fiscalização)",
+  "minPdf": 60,
+  "minVideo": 140,
+  "relevancia": "Alta",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-41",
+  "n": 41,
+  "data": "2026-11-08",
+  "disciplina": "Direito Constitucional (PODER JUD.)",
+  "conteudo": "Leitura PDF + Poder Judiciário (Art. 92 a 126 CF/88): STF, STJ, TST e TRTs - Estrutura e Garantias",
+  "minPdf": 60,
+  "minVideo": 145,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-42",
+  "n": 42,
+  "data": "2026-11-09",
+  "disciplina": "Revisão & Questões (R7/R14/R30)",
+  "conteudo": "Banco de Questões Semanal 06 + Simulado Focado em Direito Constitucional e Adm.",
+  "minPdf": 30,
+  "minVideo": 150,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-43",
+  "n": 43,
+  "data": "2026-11-10",
+  "disciplina": "Direito do Trabalho (NÚCLEO DURO)",
+  "conteudo": "Leitura PDF + Aulas 07 e 08: Estabilidade, FGTS e Jornada de Trabalho (Horas Extras, Intervalos)",
+  "minPdf": 60,
+  "minVideo": 145,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-44",
+  "n": 44,
+  "data": "2026-11-11",
+  "disciplina": "Direito do Trabalho (NÚCLEO DURO)",
+  "conteudo": "Leitura PDF + Aula 09: Remuneração e Salário (Gorjetas, In Natura, Equiparação Salarial)",
+  "minPdf": 60,
+  "minVideo": 140,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-45",
+  "n": 45,
+  "data": "2026-11-12",
+  "disciplina": "Direito do Trabalho",
+  "conteudo": "Leitura PDF + Aulas 10 a 12: Prescrição/Decadência, Segurança do Trabalho e Proteção à Mulher",
+  "minPdf": 60,
+  "minVideo": 135,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-46",
+  "n": 46,
+  "data": "2026-11-13",
+  "disciplina": "Direito Coletivo & Greve",
+  "conteudo": "Leitura PDF + Aulas 13 a 18: Direito Coletivo, Sindicatos, Greve, Dano Extrapatrimonial e Súmulas STF",
+  "minPdf": 60,
+  "minVideo": 140,
+  "relevancia": "Alta",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-47",
+  "n": 47,
+  "data": "2026-11-14",
+  "disciplina": "AFO (Orçamento Público)",
+  "conteudo": "Leitura PDF + Aulas 01 a 03 AFO: Conceito, Princípios, Ciclo Orçamentário, PPA, LDO e LOA",
+  "minPdf": 60,
+  "minVideo": 145,
+  "relevancia": "Média",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-48",
+  "n": 48,
+  "data": "2026-11-15",
+  "disciplina": "AFO (Receita e Despesa)",
+  "conteudo": "Leitura PDF + Aulas 04 e 05 AFO: Receita Pública, Despesa Pública (Estágios e Classificação)",
+  "minPdf": 60,
+  "minVideo": 135,
+  "relevancia": "Média",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-49",
+  "n": 49,
+  "data": "2026-11-16",
+  "disciplina": "Revisão & Questões (R7/R14/R30)",
+  "conteudo": "Banco de Questões Semanal 07 + Treino Intensivo de Questões de Direito do Trabalho",
+  "minPdf": 30,
+  "minVideo": 150,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-50",
+  "n": 50,
+  "data": "2026-11-17",
+  "disciplina": "Gestão de Recursos Materiais",
+  "conteudo": "Leitura PDF + Administração de Materiais (Partes I a VIII): Estoques, Inventário e Compras",
+  "minPdf": 60,
+  "minVideo": 140,
+  "relevancia": "Média",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-51",
+  "n": 51,
+  "data": "2026-11-18",
+  "disciplina": "Gestão da Qualidade & LAI",
+  "conteudo": "Leitura PDF + Gestão da Qualidade + Lei de Acesso à Informação (Lei 12.527/11 e LC 131/09)",
+  "minPdf": 60,
+  "minVideo": 135,
+  "relevancia": "Média",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-52",
+  "n": 52,
+  "data": "2026-11-19",
+  "disciplina": "Direito Proc. Trabalho (NÚCLEO)",
+  "conteudo": "Leitura PDF + Aula 01: Organização e Competência da Justiça do Trabalho (Art. 114 CF/88)",
+  "minPdf": 60,
+  "minVideo": 145,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-53",
+  "n": 53,
+  "data": "2026-11-20",
+  "disciplina": "Direito Proc. Trabalho (NÚCLEO)",
+  "conteudo": "Leitura PDF + Aulas 02 a 05: Serviços Auxiliares, Custas, Honorários, MPT e Princípios do PJT",
+  "minPdf": 60,
+  "minVideo": 140,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-54",
+  "n": 54,
+  "data": "2026-11-21",
+  "disciplina": "Direito Proc. Trabalho (NÚCLEO)",
+  "conteudo": "Leitura PDF + Aulas 06 a 08: Prescrição Intercorrente, Atos Processuais, Prazos e Valor da Causa",
+  "minPdf": 60,
+  "minVideo": 140,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-55",
+  "n": 55,
+  "data": "2026-11-22",
+  "disciplina": "Direito Proc. Trabalho (NÚCLEO)",
+  "conteudo": "Leitura PDF + Aulas 09 a 11: Partes e Procuradores, IDPJ e Ritos Processuais (Sumaríssimo)",
+  "minPdf": 60,
+  "minVideo": 140,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-56",
+  "n": 56,
+  "data": "2026-11-23",
+  "disciplina": "Revisão & Questões (R7/R14/R30)",
+  "conteudo": "Banco de Questões Semanal 08 + Aula Especial de Processo do Trabalho (Profª. Cleize)",
+  "minPdf": 30,
+  "minVideo": 150,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-57",
+  "n": 57,
+  "data": "2026-11-24",
+  "disciplina": "Direito Proc. Trabalho (NÚCLEO)",
+  "conteudo": "Leitura PDF + Aulas 12 a 14: Audiência Trabalhista (Revelia, Conciliação), Provas e Sentença",
+  "minPdf": 60,
+  "minVideo": 145,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-58",
+  "n": 58,
+  "data": "2026-11-25",
+  "disciplina": "Direito Proc. Trabalho (NÚCLEO)",
+  "conteudo": "Leitura PDF + Aula 16: Execução Trabalhista (Liquidação, Penhora, Embargos à Execução)",
+  "minPdf": 60,
+  "minVideo": 145,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-59",
+  "n": 59,
+  "data": "2026-11-26",
+  "disciplina": "Direito Proc. Trabalho (NÚCLEO)",
+  "conteudo": "Leitura PDF + Aula 17: Recursos em Espécie (Recurso Ordinário, Agravo de Petição, Recurso de Revista)",
+  "minPdf": 60,
+  "minVideo": 150,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-60",
+  "n": 60,
+  "data": "2026-11-27",
+  "disciplina": "Direito Proc. Trabalho",
+  "conteudo": "Leitura PDF + Aulas 18 a 21: PJe (Lei 11.419), Instruções Normativas TST e Acordo Extrajudicial",
+  "minPdf": 60,
+  "minVideo": 135,
+  "relevancia": "Alta",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-61",
+  "n": 61,
+  "data": "2026-11-28",
+  "disciplina": "Ética no Serviço Público",
+  "conteudo": "Leitura PDF + Ética, Moral, Código de Ética (Dec. 1.171/94) e Gestão da Ética (Dec. 6.029/07)",
+  "minPdf": 60,
+  "minVideo": 130,
+  "relevancia": "Média",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-62",
+  "n": 62,
+  "data": "2026-11-29",
+  "disciplina": "Língua Portuguesa (REFORÇO)",
+  "conteudo": "Revisão focada dos tópicos fracos: Crase, Vírgula, Regência e Concordância + 30 Questões",
+  "minPdf": 30,
+  "minVideo": 150,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-63",
+  "n": 63,
+  "data": "2026-11-30",
+  "disciplina": "Revisão & Questões (R7/R14/R30)",
+  "conteudo": "Banco de Questões Semanal 09 + Simulado Global TRT-4 (Conhecimentos Gerais e Específicos)",
+  "minPdf": 30,
+  "minVideo": 160,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-64",
+  "n": 64,
+  "data": "2026-12-01",
+  "disciplina": "Direito do Trabalho (REVISE SECA)",
+  "conteudo": "Leitura Integral da CLT: Arts. 2º a 11 (Geral), 130 a 145 (Férias) e 442 a 510 (Contratos/Rescisão)",
+  "minPdf": 90,
+  "minVideo": 90,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-65",
+  "n": 65,
+  "data": "2026-12-02",
+  "disciplina": "Direito Proc. Trabalho (REVISE SECA)",
+  "conteudo": "Leitura Integral da CLT: Arts. 763 a 836 (Procedimentos/Audiência) e 876 a 892 (Execução)",
+  "minPdf": 90,
+  "minVideo": 90,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-66",
+  "n": 66,
+  "data": "2026-12-03",
+  "disciplina": "Direito Constitucional (LEI SECA)",
+  "conteudo": "Leitura Integral CF/88: Art. 5º (Direitos e Deveres), Art. 37 a 41 (Adm. Pública) e 111 a 116 (TRTs)",
+  "minPdf": 90,
+  "minVideo": 90,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-67",
+  "n": 67,
+  "data": "2026-12-04",
+  "disciplina": "Direito Administrativo (LEI SECA)",
+  "conteudo": "Leitura Integral da Lei 8.112/90 (Direitos, Deveres, PAD) + Lei 14.133/21 (Contratação Direta)",
+  "minPdf": 90,
+  "minVideo": 90,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-68",
+  "n": 68,
+  "data": "2026-12-05",
+  "disciplina": "Português (EXERCÍCIOS BANCA)",
+  "conteudo": "Resolução Intensiva de 50 Questões da Banca de Português (FCC / Cebraspe)",
+  "minPdf": 30,
+  "minVideo": 150,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-69",
+  "n": 69,
+  "data": "2026-12-06",
+  "disciplina": "RLM (EXERCÍCIOS BANCA)",
+  "conteudo": "Resolução Intensiva de 40 Questões de RLM (Lógica de Proposições e Porcentagem)",
+  "minPdf": 30,
+  "minVideo": 150,
+  "relevancia": "Média",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-70",
+  "n": 70,
+  "data": "2026-12-07",
+  "disciplina": "Revisão & Questões (R7/R14/R30)",
+  "conteudo": "Simulado Completo Pré-Edital TRT-4 + Análise de Desempenho e Erros",
+  "minPdf": 30,
+  "minVideo": 180,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-71",
+  "n": 71,
+  "data": "2026-12-08",
+  "disciplina": "Direito do Trabalho (QUESTÕES)",
+  "conteudo": "Bateria de 60 Questões: Contrato de Trabalho, Rescisão, Salário e Jornada",
+  "minPdf": 30,
+  "minVideo": 150,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-72",
+  "n": 72,
+  "data": "2026-12-09",
+  "disciplina": "Direito Proc. Trabalho (QUESTÕES)",
+  "conteudo": "Bateria de 60 Questões: Competência, Audiência, Provas, Recursos e Execução",
+  "minPdf": 30,
+  "minVideo": 150,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-73",
+  "n": 73,
+  "data": "2026-12-10",
+  "disciplina": "Direito Constitucional (QUESTÕES)",
+  "conteudo": "Bateria de 50 Questões: Direitos Fundamentais, Organização do Estado e Poder Judiciário",
+  "minPdf": 30,
+  "minVideo": 150,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-74",
+  "n": 74,
+  "data": "2026-12-11",
+  "disciplina": "Direito Administrativo (QUESTÕES)",
+  "conteudo": "Bateria de 50 Questões: Servidores (8.112), Licitações (14.133) e Improbidade (8.429)",
+  "minPdf": 30,
+  "minVideo": 150,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-75",
+  "n": 75,
+  "data": "2026-12-12",
+  "disciplina": "Gestão Pública & AFO (QUESTÕES)",
+  "conteudo": "Bateria de 40 Questões: Gestão de Processos, Pessoas, Projetos e Orçamento Público",
+  "minPdf": 30,
+  "minVideo": 135,
+  "relevancia": "Média",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-76",
+  "n": 76,
+  "data": "2026-12-13",
+  "disciplina": "Treino Discursivo / Redação",
+  "conteudo": "Redação Completa sobre tema atual de Direito do Trabalho / Gestão Pública + Espelho de Correção",
+  "minPdf": 30,
+  "minVideo": 150,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-77",
+  "n": 77,
+  "data": "2026-12-14",
+  "disciplina": "Revisão & Questões (R7/R14/R30)",
+  "conteudo": "Simulado Geral de Reta Final 01 + Caderno de Erros",
+  "minPdf": 30,
+  "minVideo": 180,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-78",
+  "n": 78,
+  "data": "2026-12-15",
+  "disciplina": "Súmulas e OJs TST (ALTÍSSIMA RELEVÂNCIA)",
+  "conteudo": "Revisão das Principais Súmulas e OJs do TST (Jornada, Equiparação, Rescisão e Execução)",
+  "minPdf": 90,
+  "minVideo": 90,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-79",
+  "n": 79,
+  "data": "2026-12-16",
+  "disciplina": "Jurisprudência & Informativos",
+  "conteudo": "Leitura dos Principais Informativos e Jurisprudência Consolidada do TST e STF para TRT",
+  "minPdf": 90,
+  "minVideo": 90,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-80",
+  "n": 80,
+  "data": "2026-12-17",
+  "disciplina": "Reta Final: Direito do Trabalho",
+  "conteudo": "Revisão SuperIntensiva: Pontos Chave de Direito do Trabalho + 30 Questões Rápidas",
+  "minPdf": 60,
+  "minVideo": 120,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-81",
+  "n": 81,
+  "data": "2026-12-18",
+  "disciplina": "Reta Final: Processo do Trabalho",
+  "conteudo": "Revisão SuperIntensiva: Pontos Chave de Processo do Trabalho + 30 Questões Rápidas",
+  "minPdf": 60,
+  "minVideo": 120,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-82",
+  "n": 82,
+  "data": "2026-12-19",
+  "disciplina": "Reta Final: Língua Portuguesa",
+  "conteudo": "Revisão de Véspera Português: Pegadinhas da Banca, Vírgula, Crase e Concordância",
+  "minPdf": 60,
+  "minVideo": 120,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-83",
+  "n": 83,
+  "data": "2026-12-20",
+  "disciplina": "Reta Final: Constitucional & Adm.",
+  "conteudo": "Revisão SuperIntensiva: CF/88, Lei 8.112/90, Licitações e Improbidade",
+  "minPdf": 60,
+  "minVideo": 120,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-84",
+  "n": 84,
+  "data": "2026-12-21",
+  "disciplina": "Revisão & Questões (R7/R14/R30)",
+  "conteudo": "Simulado Geral de Reta Final 02 + Ajustes Finais no Caderno de Erros",
+  "minPdf": 30,
+  "minVideo": 180,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-85",
+  "n": 85,
+  "data": "2026-12-22",
+  "disciplina": "Revisão Final - Legislação Seca",
+  "conteudo": "Passardas nos artigos mais cobrados: CLT, CF/88 e Lei 8.112/90",
+  "minPdf": 90,
+  "minVideo": 90,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-86",
+  "n": 86,
+  "data": "2026-12-23",
+  "disciplina": "Revisão Final - Súmulas & Prazos",
+  "conteudo": "Mapeamento Mnemônico de Prazos Trabalhistas e Prazos do PJT",
+  "minPdf": 90,
+  "minVideo": 90,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-87",
+  "n": 87,
+  "data": "2026-12-24",
+  "disciplina": "Revisão Final - Questões de Ouro",
+  "conteudo": "Re-resolução das 40 questões mais difíceis erradas ao longo do cronograma",
+  "minPdf": 60,
+  "minVideo": 120,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-88",
+  "n": 88,
+  "data": "2026-12-25",
+  "disciplina": "Revisão Geral de Véspera",
+  "conteudo": "Leitura de Resumos, Mapas Mentais e Esquemas das Matérias Específicas",
+  "minPdf": 90,
+  "minVideo": 90,
+  "relevancia": "Altíssima",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-89",
+  "n": 89,
+  "data": "2026-12-26",
+  "disciplina": "DESCANSO E PREPARAÇÃO MENTAL",
+  "conteudo": "Alimentação leve, organização dos documentos, canetas e descanso para o dia da prova",
+  "minPdf": 0,
+  "minVideo": 0,
+  "relevancia": "Especial",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ },
+ {
+  "id": "dia-90",
+  "n": 90,
+  "data": "2026-12-27",
+  "disciplina": "DIA DA PROVA TRT-4!",
+  "conteudo": "Execução da prova com tranquilidade, gestão de tempo e foco!",
+  "minPdf": 0,
+  "minVideo": 0,
+  "relevancia": "Especial",
+  "status": "Pendente",
+  "anotacoes": "",
+  "acertos": null,
+  "revisoes": {
+   "r7": false,
+   "r14": false,
+   "r30": false
+  }
+ }
+]

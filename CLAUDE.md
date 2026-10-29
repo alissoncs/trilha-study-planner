@@ -61,7 +61,14 @@ Tabela com as colunas `Assistido ☐ · Aula · Disciplina · Professor · Tipo 
 6. Reagendar dias atrasados e recalcular as datas seguintes.
 7. Importar o xlsx como carga inicial, além de exportar e importar JSON.
 
+## Estado atual do app
+- Stack: **Vite + React 18 + TypeScript**, CSS puro. `npm run dev` / `npm run build`.
+- Seed: `src/data/seed.json` vem do xlsx (`node scripts/build-seed.mjs`, lê `analise/convertido/cronograma-90dias.json`). Os editais em `src/data/edital-*.json` são cópias de `analise/relatorios/`.
+- Estado único em `localStorage` (chave `trilha:v1`), via `src/store.ts` e `src/lib/storage.ts`.
+- Abas: Hoje (dia, revisões vencidas, atrasados por prioridade, reagendar), Cronograma (tabela filtrável), Progresso (por matéria, via `src/lib/grupos.ts`), Edital (checklist por cargo) e Backup (JSON e configurações).
+- As revisões R7/R14/R30 são calculadas a partir de `concluidoEm`, com intervalos configuráveis. Os valores do xlsx não são importados.
+- Pendências: contagem de tópicos dos editais não é comparável entre cargos; cruzar curso x edital x cronograma; vincular dias do cronograma a tópicos do edital.
+
 ## Convenções
-- Stack ainda não escolhida: Vite + React. Pergunte à usuária se quer TypeScript antes de iniciar.
-- Antes de usar as bibliotecas de `docs/` (pypdf, openpyxl), instale-as em um venv fora do projeto. Não há `pdftotext` na máquina.
-- Não commitar nem alterar os arquivos em `docs/`.
+- Antes de usar pypdf/openpyxl, instale-os em um venv fora do projeto. Não há `pdftotext` na máquina.
+- Não alterar os arquivos em `docs/`.
