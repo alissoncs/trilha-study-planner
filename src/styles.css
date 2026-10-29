@@ -336,3 +336,10 @@ tr.atrasado .data-col { color: var(--bad); font-weight: 600; }
 .tempo-cel svg { color: var(--mut); }
 .filtros-fixos { position: sticky; top: var(--topbar-h, 0px); z-index: 20; margin: 0 -12px 14px; padding: 10px 12px; background: rgba(247,246,242,.88); backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px); border-bottom: 1px solid var(--brd); border-radius: 0 0 14px 14px; }
 .hoje-tag { display: inline-flex; align-items: center; gap: 7px; padding: 7px 12px; border-radius: 10px; background: var(--pri-s); color: var(--pri-d); font-size: 13px; font-weight: 600; white-space: nowrap; }
+
+/* Botão flutuante (calendário) */
+.fab { position: fixed; right: 28px; bottom: 28px; z-index: 40; width: 56px; height: 56px; border-radius: 50%; border: 0; display: grid; place-items: center; background: var(--pri); color: #fff; box-shadow: 0 8px 20px rgba(15,118,110,.38), 0 2px 6px rgba(31,41,51,.18); transition: transform .18s, box-shadow .18s, background .18s; }
+.fab:hover { background: var(--pri-d); transform: translateY(-3px) scale(1.05); box-shadow: 0 12px 26px rgba(15,118,110,.45), 0 3px 8px rgba(31,41,51,.2); }
+.fab:active { transform: scale(.96); }
+.fab:focus-visible { outline: 3px solid var(--pri-s); outline-offset: 3px; }
+@media (max-width: 700px) { .fab { right: 16px; bottom: 16px; width: 52px; height: 52px; } }

@@ -120,9 +120,6 @@ export default function Cronograma() {
         <Select value={status} options={opts('Todos os status', STATUS)} onChange={(v) => mudar({ status: v })} label="Status" />
         <Select value={relev} options={opts('Toda relevância', RELEVANCIAS)} onChange={(v) => mudar({ relev: v })} label="Relevância" />
         <span className="contagem-filtro">{dias.length} dias</span>
-        <button className="btn" onClick={() => setCalendario(true)}>
-          <CalendarDays size={15} /> Calendário
-        </button>
       </div>
 
       <div className="tabela-wrap">
@@ -206,6 +203,9 @@ export default function Cronograma() {
           </tbody>
         </table>
       </div>
+      <button className="fab" aria-label="Abrir calendário" title="Calendário" onClick={() => setCalendario(true)}>
+        <CalendarDays size={24} />
+      </button>
       {calendario && <CalendarioModal onClose={() => setCalendario(false)} />}
       <p className="dica">Clique em uma linha para abrir os detalhes, anotações e % de acertos.</p>
     </>
