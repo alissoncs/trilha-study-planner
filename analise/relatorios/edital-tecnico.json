@@ -1,0 +1,1004 @@
+{
+  "cargo": "Técnico Administrativo",
+  "concurso": "TRT-4 2026",
+  "disciplinas": [
+    {
+      "id": "lingua-portuguesa",
+      "nome": "Língua Portuguesa",
+      "bloco": "Conhecimentos Gerais",
+      "topicos": [
+        {
+          "id": "lingua-portuguesa-01",
+          "titulo": "Redação Oficial."
+        },
+        {
+          "id": "lingua-portuguesa-02",
+          "titulo": "Ortografia e acentuação."
+        },
+        {
+          "id": "lingua-portuguesa-03",
+          "titulo": "Emprego do sinal indicativo de crase."
+        },
+        {
+          "id": "lingua-portuguesa-04",
+          "titulo": "Compreensão e interpretação de textos de gêneros variados."
+        },
+        {
+          "id": "lingua-portuguesa-05",
+          "titulo": "Relação do texto com seu contexto histórico."
+        },
+        {
+          "id": "lingua-portuguesa-06",
+          "titulo": "Denotação e conotação."
+        },
+        {
+          "id": "lingua-portuguesa-07",
+          "titulo": "Discurso direto, discurso indireto e discurso indireto livre."
+        },
+        {
+          "id": "lingua-portuguesa-08",
+          "titulo": "Intertextualidade."
+        },
+        {
+          "id": "lingua-portuguesa-09",
+          "titulo": "Figuras de linguagem."
+        },
+        {
+          "id": "lingua-portuguesa-10",
+          "titulo": "Morfossintaxe."
+        },
+        {
+          "id": "lingua-portuguesa-11",
+          "titulo": "Elementos estruturais e processos de formação de palavras."
+        },
+        {
+          "id": "lingua-portuguesa-12",
+          "titulo": "Sinonímia e antonímia."
+        },
+        {
+          "id": "lingua-portuguesa-13",
+          "titulo": "Pontuação."
+        },
+        {
+          "id": "lingua-portuguesa-14",
+          "titulo": "Pronomes."
+        },
+        {
+          "id": "lingua-portuguesa-15",
+          "titulo": "Concordância nominal e concordância verbal."
+        },
+        {
+          "id": "lingua-portuguesa-16",
+          "titulo": "Flexão nominal e flexão verbal."
+        },
+        {
+          "id": "lingua-portuguesa-17",
+          "titulo": "Vozes do verbo."
+        },
+        {
+          "id": "lingua-portuguesa-18",
+          "titulo": "Correlação de tempos e modos verbais."
+        },
+        {
+          "id": "lingua-portuguesa-19",
+          "titulo": "Regência nominal e regência verbal."
+        },
+        {
+          "id": "lingua-portuguesa-20",
+          "titulo": "Coordenação e subordinação."
+        },
+        {
+          "id": "lingua-portuguesa-21",
+          "titulo": "Conectivos."
+        },
+        {
+          "id": "lingua-portuguesa-22",
+          "titulo": "Redação (confronto e reconhecimento de frases corretas e incorretas; organização e reorganização de orações e períodos; equivalência e transformação de estruturas)."
+        }
+      ],
+      "normas": []
+    },
+    {
+      "id": "matematica-raciocinio-logico",
+      "nome": "Matemática e Raciocínio lógico",
+      "bloco": "Conhecimentos Gerais",
+      "topicos": [
+        {
+          "id": "matematica-raciocinio-logico-01",
+          "titulo": "Estrutura lógica de relações arbitrárias entre pessoas, lugares, objetos ou eventos fictícios; deduzir novas informações das relações fornecidas e avaliar as condições usadas para estabelecer a estrutura daquelas relações."
+        },
+        {
+          "id": "matematica-raciocinio-logico-02",
+          "titulo": "Compreensão e elaboração da lógica das situações por meio de: raciocínio verbal, raciocínio matemático, raciocínio sequencial, orientação espacial e temporal, formação de conceitos, discriminação de elementos."
+        },
+        {
+          "id": "matematica-raciocinio-logico-03",
+          "titulo": "Compreensão do processo lógico que, a partir de um conjunto de hipóteses, conduz, de forma válida, a conclusões determinadas."
+        },
+        {
+          "id": "matematica-raciocinio-logico-04",
+          "titulo": "Números inteiros e racionais: operações (adição, subtração, multiplicação, divisão, potenciação); expressões numéricas; múltiplos e divisores de números naturais; problemas.",
+          "subtopicos": [
+            "Números inteiros e racionais: operações (adição, subtração, multiplicação, divisão, potenciação);",
+            "expressões numéricas;",
+            "múltiplos e divisores de números naturais;",
+            "problemas."
+          ]
+        },
+        {
+          "id": "matematica-raciocinio-logico-05",
+          "titulo": "Frações e operações com frações."
+        },
+        {
+          "id": "matematica-raciocinio-logico-06",
+          "titulo": "Números e grandezas proporcionais: razões e proporções; divisão em partes proporcionais; regra de três; porcentagem e problemas envolvendo regra de três simples, cálculos de porcentagem, acréscimos e descontos.",
+          "subtopicos": [
+            "Números e grandezas proporcionais: razões e proporções;",
+            "divisão em partes proporcionais;",
+            "regra de três;",
+            "porcentagem e problemas envolvendo regra de três simples, cálculos de porcentagem, acréscimos e descontos."
+          ]
+        },
+        {
+          "id": "matematica-raciocinio-logico-07",
+          "titulo": "Noções de Estatísticas: medidas de tendência central (moda, mediana, média aritmética simples e ponderada) e de dispersão (desvio médio, amplitude, variância, desvio padrão); leitura e interpretação de gráficos (histogramas, setores, infográficos) e tabelas.",
+          "subtopicos": [
+            "Noções de Estatísticas: medidas de tendência central (moda, mediana, média aritmética simples e ponderada) e de dispersão (desvio médio, amplitude, variância, desvio padrão);",
+            "leitura e interpretação de gráficos (histogramas, setores, infográficos) e tabelas."
+          ]
+        }
+      ],
+      "normas": []
+    },
+    {
+      "id": "nocoes-de-legislacao",
+      "nome": "Noções de Legislação",
+      "bloco": "Conhecimentos Gerais",
+      "topicos": [
+        {
+          "id": "nocoes-de-legislacao-01",
+          "titulo": "Noções de Sustentabilidade: Resolução CNJ nº 400/2021 (Dispõe sobre a política de sustentabilidade no âmbito do Poder Judiciário)."
+        },
+        {
+          "id": "nocoes-de-legislacao-02",
+          "titulo": "Código de Conduta e Valores Éticos do Tribunal Regional do Trabalho da 4ª Região (Portaria GP.TRT4 nº 4.573, de 14 de Agosto de 2023. Texto compilado com as alterações promovidas pela Portaria GP.TRT4 nº 2.808/2025)."
+        },
+        {
+          "id": "nocoes-de-legislacao-03",
+          "titulo": "Regimento Interno do Tribunal Regional do Trabalho da 4ª Região (atualizado até a RA nº 31, de 17.08.2026, que aprovou o Assento Regimental nº 04/2026 (RA disponibilizada no DEJT de 04.09.2026, considerada publicada em 08.09.2026)."
+        },
+        {
+          "id": "nocoes-de-legislacao-04",
+          "titulo": "Resolução CSJT nº 360/2023 (Política de Prevenção e Enfrentamento da Violência, do Assédio e de Todas as Formas de Discriminação no âmbito da Justiça do Trabalho de primeiro e segundo graus)."
+        },
+        {
+          "id": "nocoes-de-legislacao-05",
+          "titulo": "Resolução CNJ nº 351/2020 (Institui, no âmbito do Poder Judiciário, a Política de Prevenção e Enfrentamento do Assédio Moral, do Assédio Sexual e da Discriminação)."
+        }
+      ],
+      "normas": [
+        "Resolução CNJ nº 400/2021",
+        "Portaria GP.TRT4 nº 4.573/2023 (Código de Conduta e Valores Éticos do TRT4), com alterações da Portaria GP.TRT4 nº 2.808/2025",
+        "Regimento Interno do TRT da 4ª Região (atualizado até a RA nº 31, de 17.08.2026 - Assento Regimental nº 04/2026)",
+        "Resolução CSJT nº 360/2023",
+        "Resolução CNJ nº 351/2020"
+      ]
+    },
+    {
+      "id": "nocoes-de-direitos-humanos",
+      "nome": "Noções de Direitos Humanos",
+      "bloco": "Conhecimentos Gerais",
+      "topicos": [
+        {
+          "id": "nocoes-de-direitos-humanos-01",
+          "titulo": "Direitos Humanos: Evolução histórica dos Direitos Humanos."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-02",
+          "titulo": "Os fundamentos filosóficos dos Direitos Humanos."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-03",
+          "titulo": "Fontes, classificação, princípios, características e gerações de direitos humanos."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-04",
+          "titulo": "Interpretação dos tratados de Direitos Humanos."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-05",
+          "titulo": "Colisão entre direitos humanos: Teorias para resolução."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-06",
+          "titulo": "Tratados internacionais de Direitos Humanos em face da Constituição da República Federativa do Brasil de 1988."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-07",
+          "titulo": "Controle de convencionalidade."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-08",
+          "titulo": "Declaração Universal dos Direitos Humanos."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-09",
+          "titulo": "Pacto Internacional dos Direitos Civis e Políticos (PIDCP) e protocolos facultativos."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-10",
+          "titulo": "Pacto Internacional dos Direitos Econômicos, Sociais e Culturais (PIDESC) e protocolos facultativos."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-11",
+          "titulo": "Convenção sobre a eliminação de todas as formas de discriminação racial."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-12",
+          "titulo": "Convenção sobre a eliminação de todas as formas de discriminação contra a mulher e protocolo facultativo."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-13",
+          "titulo": "Convenção sobre os direitos da criança e seus protocolos facultativos."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-14",
+          "titulo": "Convenção sobre os direitos da pessoa com deficiência e seu protocolo facultativo."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-15",
+          "titulo": "Convenção relativa à proteção do patrimônio mundial, cultural e natural - \"Declaração de Estocolmo\"."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-16",
+          "titulo": "Convenção sobre a diversidade biológica."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-17",
+          "titulo": "Declaração das Nações Unidas sobre os direitos dos povos indígenas."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-18",
+          "titulo": "Sistema Regional Interamericano de Proteção aos Direitos Humanos."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-19",
+          "titulo": "Declaração Americana dos Direitos e Deveres do Homem."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-20",
+          "titulo": "Convenção Americana sobre Direitos Humanos."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-21",
+          "titulo": "Protocolo adicional à Convenção Americana sobre Direitos Humanos em matéria de direitos econômicos, sociais e culturais - \"Protocolo de San Salvador\"."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-22",
+          "titulo": "Comissão Interamericana de Direitos Humanos e Corte Interamericana de Direitos Humanos: composição, funcionamento, atribuições e histórico de decisões."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-23",
+          "titulo": "Mecanismos de proteção aos direitos humanos na ordem jurídica nacional e internacional."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-24",
+          "titulo": "Direitos Humanos em espécie e grupos vulneráveis."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-25",
+          "titulo": "Direitos Humanos das minorias e de vítimas de injustiças históricas: Mulher, Negro, Criança e Adolescente, Idoso, Pessoa com Deficiência, Pessoas em situação de rua, Povos Indígenas, LGBT, Quilombolas, Sem-teto, Sem-terra, Imigrantes e Refugiados."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-26",
+          "titulo": "Perspectiva de Gênero no Poder Judiciário e o Comitê de Incentivo à Participação Institucional Feminina no Poder Judiciário (Resolução CNJ nº 492/2023);"
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-27",
+          "titulo": "Programa de Equidade de Raça, Gênero e Diversidade no âmbito da Justiça do Trabalho (Resolução CSJT nº 368/2023)."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-28",
+          "titulo": "Tribunal Penal Internacional: Estatuto de Roma e Decreto nº 4.388/2002."
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-29",
+          "titulo": "Carta das Nações Unidas, da qual faz parte integrante o anexo Estatuto da Corte Internacional de Justiça (Decreto nº 19.841/1945);"
+        },
+        {
+          "id": "nocoes-de-direitos-humanos-30",
+          "titulo": "Protocolos para atuação e julgamento na Justiça do Trabalho."
+        }
+      ],
+      "normas": [
+        "Declaração Universal dos Direitos Humanos",
+        "PIDCP e protocolos facultativos",
+        "PIDESC e protocolos facultativos",
+        "Convenção sobre a eliminação de todas as formas de discriminação racial",
+        "Convenção sobre a eliminação de todas as formas de discriminação contra a mulher e protocolo facultativo",
+        "Convenção sobre os direitos da criança e seus protocolos facultativos",
+        "Convenção sobre os direitos da pessoa com deficiência e seu protocolo facultativo",
+        "Convenção relativa à proteção do patrimônio mundial, cultural e natural (Declaração de Estocolmo)",
+        "Convenção sobre a diversidade biológica",
+        "Declaração das Nações Unidas sobre os direitos dos povos indígenas",
+        "Declaração Americana dos Direitos e Deveres do Homem",
+        "Convenção Americana sobre Direitos Humanos",
+        "Protocolo de San Salvador",
+        "Resolução CNJ nº 492/2023",
+        "Resolução CSJT nº 368/2023",
+        "Estatuto de Roma e Decreto nº 4.388/2002",
+        "Carta das Nações Unidas e Estatuto da Corte Internacional de Justiça (Decreto nº 19.841/1945)"
+      ]
+    },
+    {
+      "id": "nocoes-de-informatica",
+      "nome": "Noções de Informática",
+      "bloco": "Conhecimentos Gerais",
+      "topicos": [
+        {
+          "id": "nocoes-de-informatica-01",
+          "titulo": "Noções de sistema operacional: Windows 10 e 11."
+        },
+        {
+          "id": "nocoes-de-informatica-02",
+          "titulo": "E-mail, edição de textos, planilhas, agenda e apresentações: Google Workspace e Microsoft Office 365."
+        },
+        {
+          "id": "nocoes-de-informatica-03",
+          "titulo": "Compartilhamento de arquivos: Google Workspace."
+        },
+        {
+          "id": "nocoes-de-informatica-04",
+          "titulo": "Google Drive: Criar arquivos, editar, compartilhamento de arquivos e permissões; Agenda: Criar eventos, convidar participantes, ajustar horários, anexar documentos, adicionar videoconferência; Tarefas; Google Meet; Gmail: Configurações rápidas, painel de visualização, marcadores; editor de texto (documentos Google).",
+          "subtopicos": [
+            "Google Drive: Criar arquivos, editar, compartilhamento de arquivos e permissões;",
+            "Agenda: Criar eventos, convidar participantes, ajustar horários, anexar documentos, adicionar videoconferência;",
+            "Tarefas;",
+            "Google Meet;",
+            "Gmail: Configurações rápidas, painel de visualização, marcadores;",
+            "editor de texto (documentos Google)."
+          ]
+        },
+        {
+          "id": "nocoes-de-informatica-05",
+          "titulo": "Redes de Computadores: Conceitos básicos, ferramentas, aplicativos e procedimentos de internet e intranet."
+        },
+        {
+          "id": "nocoes-de-informatica-06",
+          "titulo": "Navegadores web: Mozilla Firefox, Google Chrome, Microsoft Edge."
+        },
+        {
+          "id": "nocoes-de-informatica-07",
+          "titulo": "Sítios de busca e pesquisa na internet: Utilização de mecanismos de busca como Google, Bing."
+        },
+        {
+          "id": "nocoes-de-informatica-08",
+          "titulo": "Conceitos de organização e de gerenciamento de informações: Arquivos, pastas e programas."
+        },
+        {
+          "id": "nocoes-de-informatica-09",
+          "titulo": "Segurança da informação: Procedimentos de segurança; noções de vírus, worms e outras pragas virtuais; aplicativos para segurança (antivírus, firewall, antispyware etc.); boas práticas de segurança cibernética, incluindo autenticação de dois fatores e gestão de senhas.",
+          "subtopicos": [
+            "Segurança da informação: Procedimentos de segurança;",
+            "noções de vírus, worms e outras pragas virtuais;",
+            "aplicativos para segurança (antivírus, firewall, antispyware etc.);",
+            "boas práticas de segurança cibernética, incluindo autenticação de dois fatores e gestão de senhas."
+          ]
+        }
+      ],
+      "normas": []
+    },
+    {
+      "id": "nocoes-de-direito-constitucional",
+      "nome": "Noções de Direito Constitucional",
+      "bloco": "Conhecimentos Específicos",
+      "topicos": [
+        {
+          "id": "nocoes-de-direito-constitucional-01",
+          "titulo": "Da aplicabilidade das normas constitucionais: normas de eficácia plena, contida e limitada; normas programáticas.",
+          "subtopicos": [
+            "Da aplicabilidade das normas constitucionais: normas de eficácia plena, contida e limitada;",
+            "normas programáticas."
+          ]
+        },
+        {
+          "id": "nocoes-de-direito-constitucional-02",
+          "titulo": "Controle de constitucionalidade: ação direta de inconstitucionalidade; ação declaratória de constitucionalidade e arguição de descumprimento de preceito fundamental.",
+          "subtopicos": [
+            "Controle de constitucionalidade: ação direta de inconstitucionalidade;",
+            "ação declaratória de constitucionalidade e arguição de descumprimento de preceito fundamental."
+          ]
+        },
+        {
+          "id": "nocoes-de-direito-constitucional-03",
+          "titulo": "Princípios fundamentais."
+        },
+        {
+          "id": "nocoes-de-direito-constitucional-04",
+          "titulo": "Dos direitos e garantias fundamentais: dos direitos e deveres individuais e coletivos; dos direitos sociais; dos direitos de nacionalidade; dos direitos políticos; dos partidos políticos.",
+          "subtopicos": [
+            "Dos direitos e garantias fundamentais: dos direitos e deveres individuais e coletivos;",
+            "dos direitos sociais;",
+            "dos direitos de nacionalidade;",
+            "dos direitos políticos;",
+            "dos partidos políticos."
+          ]
+        },
+        {
+          "id": "nocoes-de-direito-constitucional-05",
+          "titulo": "Da organização do Estado: da organização político-administrativa: da União; dos Estados Federados; dos Municípios; Do Distrito Federal; dos Territórios; da intervenção.",
+          "subtopicos": [
+            "Da organização do Estado: da organização político-administrativa: da União;",
+            "dos Estados Federados;",
+            "dos Municípios;",
+            "Do Distrito Federal;",
+            "dos Territórios;",
+            "da intervenção."
+          ]
+        },
+        {
+          "id": "nocoes-de-direito-constitucional-06",
+          "titulo": "Da Administração Pública: disposições gerais; dos servidores públicos.",
+          "subtopicos": [
+            "Da Administração Pública: disposições gerais;",
+            "dos servidores públicos."
+          ]
+        },
+        {
+          "id": "nocoes-de-direito-constitucional-07",
+          "titulo": "Da organização dos Poderes."
+        },
+        {
+          "id": "nocoes-de-direito-constitucional-08",
+          "titulo": "Do Poder Executivo: do Presidente e do Vice-Presidente da República;"
+        },
+        {
+          "id": "nocoes-de-direito-constitucional-09",
+          "titulo": "Das atribuições e responsabilidades do Presidente da República."
+        },
+        {
+          "id": "nocoes-de-direito-constitucional-10",
+          "titulo": "Do Poder Legislativo: do processo legislativo."
+        },
+        {
+          "id": "nocoes-de-direito-constitucional-11",
+          "titulo": "Da fiscalização contábil, financeira e orçamentária."
+        },
+        {
+          "id": "nocoes-de-direito-constitucional-12",
+          "titulo": "Do Poder Judiciário: disposições gerais; do Supremo Tribunal Federal; do Conselho Nacional de Justiça: organização e competência.",
+          "subtopicos": [
+            "Do Poder Judiciário: disposições gerais;",
+            "do Supremo Tribunal Federal;",
+            "do Conselho Nacional de Justiça: organização e competência."
+          ]
+        },
+        {
+          "id": "nocoes-de-direito-constitucional-13",
+          "titulo": "Do Superior Tribunal de Justiça."
+        },
+        {
+          "id": "nocoes-de-direito-constitucional-14",
+          "titulo": "Do Tribunal Superior do Trabalho, dos Tribunais Regionais do Trabalho e dos Juízes do Trabalho."
+        },
+        {
+          "id": "nocoes-de-direito-constitucional-15",
+          "titulo": "Do Conselho Superior da Justiça do Trabalho: organização e competência."
+        },
+        {
+          "id": "nocoes-de-direito-constitucional-16",
+          "titulo": "Das funções essenciais à Justiça: do Ministério Público; da Advocacia Pública; da Advocacia e da Defensoria Pública.",
+          "subtopicos": [
+            "Das funções essenciais à Justiça: do Ministério Público;",
+            "da Advocacia Pública;",
+            "da Advocacia e da Defensoria Pública."
+          ]
+        }
+      ],
+      "normas": [
+        "Constituição da República Federativa do Brasil de 1988 (arts. citados por título/capítulo; art. 7º tratado em Direito do Trabalho)"
+      ]
+    },
+    {
+      "id": "nocoes-de-direito-administrativo",
+      "nome": "Noções de Direito Administrativo",
+      "bloco": "Conhecimentos Específicos",
+      "topicos": [
+        {
+          "id": "nocoes-de-direito-administrativo-01",
+          "titulo": "Administração Pública."
+        },
+        {
+          "id": "nocoes-de-direito-administrativo-02",
+          "titulo": "Regime jurídico administrativo."
+        },
+        {
+          "id": "nocoes-de-direito-administrativo-03",
+          "titulo": "Princípios constitucionais e legais da Administração Pública."
+        },
+        {
+          "id": "nocoes-de-direito-administrativo-04",
+          "titulo": "Princípios administrativos implícitos."
+        },
+        {
+          "id": "nocoes-de-direito-administrativo-05",
+          "titulo": "Lei de Introdução às normas do Direito Brasileiro e sua aplicação na Administração Pública (Decreto-Lei nº 4.657/1942 e suas alterações)."
+        },
+        {
+          "id": "nocoes-de-direito-administrativo-06",
+          "titulo": "Poderes da Administração Pública: poder hierárquico, poder disciplinar, poder regulamentar, poder de polícia."
+        },
+        {
+          "id": "nocoes-de-direito-administrativo-07",
+          "titulo": "Poderes e deveres dos administradores públicos."
+        },
+        {
+          "id": "nocoes-de-direito-administrativo-08",
+          "titulo": "Uso e abuso do poder."
+        },
+        {
+          "id": "nocoes-de-direito-administrativo-09",
+          "titulo": "Crimes de abuso de autoridade (Lei nº 13.869/2019 e suas alterações)."
+        },
+        {
+          "id": "nocoes-de-direito-administrativo-10",
+          "titulo": "Ato administrativo: conceito, características e atributos; elementos e requisitos de validade; classificação dos atos administrativos; formação e efeitos; extinção, revogação, invalidação e convalidação; cassação e caducidade.",
+          "subtopicos": [
+            "Ato administrativo: conceito, características e atributos;",
+            "elementos e requisitos de validade;",
+            "classificação dos atos administrativos;",
+            "formação e efeitos;",
+            "extinção, revogação, invalidação e convalidação;",
+            "cassação e caducidade."
+          ]
+        },
+        {
+          "id": "nocoes-de-direito-administrativo-11",
+          "titulo": "Processo administrativo no âmbito da Administração Pública Federal (Lei nº 9.784/1999 e suas alterações)."
+        },
+        {
+          "id": "nocoes-de-direito-administrativo-12",
+          "titulo": "Controle da Administração Pública."
+        },
+        {
+          "id": "nocoes-de-direito-administrativo-13",
+          "titulo": "Classificações relativas ao controle da Administração Pública."
+        },
+        {
+          "id": "nocoes-de-direito-administrativo-14",
+          "titulo": "Controle exercido pelo Poder Judiciário, pelo Poder Legislativo e pelos Tribunais de Contas."
+        },
+        {
+          "id": "nocoes-de-direito-administrativo-15",
+          "titulo": "Sanções aplicáveis em virtude da prática de atos de improbidade administrativa (Lei nº 8.429/1992 e suas alterações)."
+        },
+        {
+          "id": "nocoes-de-direito-administrativo-16",
+          "titulo": "Lei de licitações e contratos administrativos (Lei nº 14.133/2021 e suas alterações)."
+        },
+        {
+          "id": "nocoes-de-direito-administrativo-17",
+          "titulo": "Licitação: conceito, natureza jurídica, objeto e finalidade; princípios básicos e correlatos; modalidades; obrigatoriedade, dispensa e inexigibilidade; procedimento licitatório; anulação, revogação e recursos administrativos; sanções e procedimento sancionatório; crimes em licitações e contratos administrativos.",
+          "subtopicos": [
+            "Licitação: conceito, natureza jurídica, objeto e finalidade;",
+            "princípios básicos e correlatos;",
+            "modalidades;",
+            "obrigatoriedade, dispensa e inexigibilidade;",
+            "procedimento licitatório;",
+            "anulação, revogação e recursos administrativos;",
+            "sanções e procedimento sancionatório;",
+            "crimes em licitações e contratos administrativos."
+          ]
+        },
+        {
+          "id": "nocoes-de-direito-administrativo-18",
+          "titulo": "Contrato administrativo: conceito, principais características e espécies; formalização, execução e inexecução; duração, prorrogação, renovação e extinção; revisão e rescisão; reajustamento.",
+          "subtopicos": [
+            "Contrato administrativo: conceito, principais características e espécies;",
+            "formalização, execução e inexecução;",
+            "duração, prorrogação, renovação e extinção;",
+            "revisão e rescisão;",
+            "reajustamento."
+          ]
+        },
+        {
+          "id": "nocoes-de-direito-administrativo-19",
+          "titulo": "Agentes públicos: classificação; cargo, emprego e função pública; provimento e investidura; exercício e afastamentos.",
+          "subtopicos": [
+            "Agentes públicos: classificação;",
+            "cargo, emprego e função pública;",
+            "provimento e investidura;",
+            "exercício e afastamentos."
+          ]
+        },
+        {
+          "id": "nocoes-de-direito-administrativo-20",
+          "titulo": "Direito de Greve."
+        },
+        {
+          "id": "nocoes-de-direito-administrativo-21",
+          "titulo": "Regime jurídico dos servidores públicos civis da União, das autarquias e das fundações públicas federais (Lei nº 8.112/1990 consolidada nos termos da Lei nº 9.527/1997 e suas alterações)."
+        },
+        {
+          "id": "nocoes-de-direito-administrativo-22",
+          "titulo": "Lei nº 11.416/2006 (dispõe sobre as carreiras dos servidores públicos do Poder Judiciário Federal)."
+        },
+        {
+          "id": "nocoes-de-direito-administrativo-23",
+          "titulo": "Regime constitucional dos servidores públicos na Constituição Federal de 1988."
+        },
+        {
+          "id": "nocoes-de-direito-administrativo-24",
+          "titulo": "Regime de emprego público e disposições da Consolidação das Leis do Trabalho (CLT) aplicáveis."
+        },
+        {
+          "id": "nocoes-de-direito-administrativo-25",
+          "titulo": "Responsabilidade civil, administrativa e penal dos agentes públicos."
+        },
+        {
+          "id": "nocoes-de-direito-administrativo-26",
+          "titulo": "Regime e processo administrativo disciplinar."
+        }
+      ],
+      "normas": [
+        "Decreto-Lei nº 4.657/1942 (LINDB)",
+        "Lei nº 13.869/2019 (abuso de autoridade)",
+        "Lei nº 9.784/1999",
+        "Lei nº 8.429/1992 (improbidade)",
+        "Lei nº 14.133/2021 (licitações e contratos)",
+        "Lei nº 8.112/1990, consolidada nos termos da Lei nº 9.527/1997",
+        "Lei nº 11.416/2006",
+        "Constituição Federal de 1988 (regime constitucional dos servidores)",
+        "Consolidação das Leis do Trabalho (CLT), disposições aplicáveis ao emprego público"
+      ]
+    },
+    {
+      "id": "nocoes-de-administracao-publica",
+      "nome": "Noções de Administração Pública",
+      "bloco": "Conhecimentos Específicos",
+      "topicos": [
+        {
+          "id": "nocoes-de-administracao-publica-01",
+          "titulo": "Características básicas das organizações formais modernas: tipos de estrutura organizacional, natureza, finalidades e critérios de departamentalização."
+        },
+        {
+          "id": "nocoes-de-administracao-publica-02",
+          "titulo": "Evolução das Teorias das Organizações."
+        },
+        {
+          "id": "nocoes-de-administracao-publica-03",
+          "titulo": "Convergências e diferenças entre a gestão pública e a gestão privada."
+        },
+        {
+          "id": "nocoes-de-administracao-publica-04",
+          "titulo": "Princípios básicos da Administração Pública."
+        },
+        {
+          "id": "nocoes-de-administracao-publica-05",
+          "titulo": "Gestão de resultados na produção de serviços públicos."
+        },
+        {
+          "id": "nocoes-de-administracao-publica-06",
+          "titulo": "Comunicação na gestão pública e gestão de redes organizacionais."
+        },
+        {
+          "id": "nocoes-de-administracao-publica-07",
+          "titulo": "Gestão e avaliação de desempenho."
+        },
+        {
+          "id": "nocoes-de-administracao-publica-08",
+          "titulo": "Modelos de Avaliação de Desempenho."
+        },
+        {
+          "id": "nocoes-de-administracao-publica-09",
+          "titulo": "Processo organizacional: planejamento, direção, coordenação, comunicação, controle e avaliação."
+        },
+        {
+          "id": "nocoes-de-administracao-publica-10",
+          "titulo": "Gestão estratégica: planejamento estratégico, tático e operacional."
+        },
+        {
+          "id": "nocoes-de-administracao-publica-11",
+          "titulo": "Gestão de pessoas do quadro próprio e terceirizadas."
+        },
+        {
+          "id": "nocoes-de-administracao-publica-12",
+          "titulo": "Gestão por Processos."
+        },
+        {
+          "id": "nocoes-de-administracao-publica-13",
+          "titulo": "Gestão por Projetos."
+        },
+        {
+          "id": "nocoes-de-administracao-publica-14",
+          "titulo": "Gestão de contratos."
+        },
+        {
+          "id": "nocoes-de-administracao-publica-15",
+          "titulo": "Gestão da Qualidade: excelência nos serviços públicos."
+        },
+        {
+          "id": "nocoes-de-administracao-publica-16",
+          "titulo": "Motivação."
+        },
+        {
+          "id": "nocoes-de-administracao-publica-17",
+          "titulo": "Liderança."
+        },
+        {
+          "id": "nocoes-de-administracao-publica-18",
+          "titulo": "Tipos de decisão e processo decisório."
+        }
+      ],
+      "normas": []
+    },
+    {
+      "id": "nocoes-de-direito-do-trabalho",
+      "nome": "Noções de Direito do Trabalho",
+      "bloco": "Conhecimentos Específicos",
+      "topicos": [
+        {
+          "id": "nocoes-de-direito-do-trabalho-01",
+          "titulo": "Dos princípios e fontes do Direito do Trabalho."
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-02",
+          "titulo": "Dos direitos constitucionais dos trabalhadores (artigo 7º da Constituição Federal de 1988)."
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-03",
+          "titulo": "Da relação de trabalho e da relação de emprego: requisitos e distinção."
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-04",
+          "titulo": "Dos sujeitos do contrato de trabalho stricto sensu: do empregado e do empregador: conceito e caracterização; dos poderes do empregador no contrato de trabalho.",
+          "subtopicos": [
+            "Dos sujeitos do contrato de trabalho stricto sensu: do empregado e do empregador: conceito e caracterização;",
+            "dos poderes do empregador no contrato de trabalho."
+          ]
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-05",
+          "titulo": "Do grupo econômico; da sucessão de empregadores; da responsabilidade solidária.",
+          "subtopicos": [
+            "Do grupo econômico;",
+            "da sucessão de empregadores;",
+            "da responsabilidade solidária."
+          ]
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-06",
+          "titulo": "Do contrato individual de trabalho: conceito, classificação e características."
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-07",
+          "titulo": "Da alteração do contrato de trabalho: alteração unilateral e bilateral; o jus variandi.",
+          "subtopicos": [
+            "Da alteração do contrato de trabalho: alteração unilateral e bilateral;",
+            "o jus variandi."
+          ]
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-08",
+          "titulo": "Da suspensão e interrupção do contrato de trabalho: caracterização e distinção."
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-09",
+          "titulo": "Da rescisão do contrato de trabalho: das justas causas; da despedida indireta; da dispensa arbitrária; da culpa recíproca; da indenização.",
+          "subtopicos": [
+            "Da rescisão do contrato de trabalho: das justas causas;",
+            "da despedida indireta;",
+            "da dispensa arbitrária;",
+            "da culpa recíproca;",
+            "da indenização."
+          ]
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-10",
+          "titulo": "Do aviso prévio."
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-11",
+          "titulo": "Da duração do trabalho; da jornada de trabalho; dos períodos de descanso; do intervalo para repouso e alimentação; do descanso semanal remunerado; do trabalho noturno e do trabalho extraordinário.",
+          "subtopicos": [
+            "Da duração do trabalho;",
+            "da jornada de trabalho;",
+            "dos períodos de descanso;",
+            "do intervalo para repouso e alimentação;",
+            "do descanso semanal remunerado;",
+            "do trabalho noturno e do trabalho extraordinário."
+          ]
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-12",
+          "titulo": "Do salário mínimo; irredutibilidade e garantia.",
+          "subtopicos": [
+            "Do salário mínimo;",
+            "irredutibilidade e garantia."
+          ]
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-13",
+          "titulo": "Das férias: do direito a férias e da sua duração; da concessão e da época das férias; da remuneração e do abono de férias.",
+          "subtopicos": [
+            "Das férias: do direito a férias e da sua duração;",
+            "da concessão e da época das férias;",
+            "da remuneração e do abono de férias."
+          ]
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-14",
+          "titulo": "Do salário e da remuneração: conceito e distinções; composição do salário; modalidades de salário; formas e meios de pagamento do salário; 13º salário.",
+          "subtopicos": [
+            "Do salário e da remuneração: conceito e distinções;",
+            "composição do salário;",
+            "modalidades de salário;",
+            "formas e meios de pagamento do salário;",
+            "13º salário."
+          ]
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-15",
+          "titulo": "Do Fundo de Garantia do Tempo de Serviço (FGTS)."
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-16",
+          "titulo": "Da prescrição e decadência."
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-17",
+          "titulo": "Da segurança e medicina no trabalho: das atividades perigosas ou insalubres."
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-18",
+          "titulo": "Da proteção ao trabalho do menor."
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-19",
+          "titulo": "Da proteção ao trabalho da mulher; da estabilidade da gestante; da licença-maternidade.",
+          "subtopicos": [
+            "Da proteção ao trabalho da mulher;",
+            "da estabilidade da gestante;",
+            "da licença-maternidade."
+          ]
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-20",
+          "titulo": "Do direito coletivo do trabalho: das convenções e acordos coletivos de trabalho."
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-21",
+          "titulo": "Das comissões de Conciliação Prévia."
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-22",
+          "titulo": "Da renúncia e transação."
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-23",
+          "titulo": "Do teletrabalho (Lei nº 13.467/2017)."
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-24",
+          "titulo": "Dano moral e material nas relações de trabalho."
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-25",
+          "titulo": "Precedentes vinculantes (IRDR e IAC)."
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-26",
+          "titulo": "Súmulas e Orientações da Jurisprudência uniformizada do Tribunal Superior do Trabalho sobre Direito do Trabalho."
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-27",
+          "titulo": "Súmulas Vinculantes do Supremo Tribunal Federal relativas ao Direito do Trabalho."
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-28",
+          "titulo": "Instruções e atos Normativos do TST em matéria de Direito do Trabalho."
+        },
+        {
+          "id": "nocoes-de-direito-do-trabalho-29",
+          "titulo": "Reforma Trabalhista - Lei nº 13.467/2017."
+        }
+      ],
+      "normas": [
+        "CLT (Consolidação das Leis do Trabalho) - base implícita",
+        "Constituição Federal de 1988, art. 7º",
+        "Lei nº 13.467/2017 (Reforma Trabalhista / teletrabalho)",
+        "Súmulas e Orientações Jurisprudenciais do TST (Direito do Trabalho)",
+        "Súmulas Vinculantes do STF relativas ao Direito do Trabalho",
+        "Instruções e atos normativos do TST em matéria de Direito do Trabalho"
+      ]
+    },
+    {
+      "id": "nocoes-de-direito-processual-do-trabalho",
+      "nome": "Noções de Direito Processual do Trabalho",
+      "bloco": "Conhecimentos Específicos",
+      "topicos": [
+        {
+          "id": "nocoes-de-direito-processual-do-trabalho-01",
+          "titulo": "Da Justiça do Trabalho: organização e competência."
+        },
+        {
+          "id": "nocoes-de-direito-processual-do-trabalho-02",
+          "titulo": "Das Varas do Trabalho e dos Tribunais Regionais do Trabalho: jurisdição e competência."
+        },
+        {
+          "id": "nocoes-de-direito-processual-do-trabalho-03",
+          "titulo": "Dos serviços auxiliares da Justiça do Trabalho: das secretarias das Varas do Trabalho e dos distribuidores."
+        },
+        {
+          "id": "nocoes-de-direito-processual-do-trabalho-04",
+          "titulo": "Do processo judiciário do trabalho: princípios gerais do processo trabalhista (aplicação subsidiária do Código de Processo Civil)."
+        },
+        {
+          "id": "nocoes-de-direito-processual-do-trabalho-05",
+          "titulo": "Dos atos, termos e prazos processuais."
+        },
+        {
+          "id": "nocoes-de-direito-processual-do-trabalho-06",
+          "titulo": "Das custas e emolumentos."
+        },
+        {
+          "id": "nocoes-de-direito-processual-do-trabalho-07",
+          "titulo": "Das partes e procuradores; do jus postulandi; da substituição e representação processuais; da assistência judiciária; dos honorários de advogado.",
+          "subtopicos": [
+            "Das partes e procuradores;",
+            "do jus postulandi;",
+            "da substituição e representação processuais;",
+            "da assistência judiciária;",
+            "dos honorários de advogado."
+          ]
+        },
+        {
+          "id": "nocoes-de-direito-processual-do-trabalho-08",
+          "titulo": "Das audiências: de conciliação, de instrução e de julgamento; da notificação das partes; do arquivamento do processo; da revelia e confissão.",
+          "subtopicos": [
+            "Das audiências: de conciliação, de instrução e de julgamento;",
+            "da notificação das partes;",
+            "do arquivamento do processo;",
+            "da revelia e confissão."
+          ]
+        },
+        {
+          "id": "nocoes-de-direito-processual-do-trabalho-09",
+          "titulo": "Dos dissídios individuais: da forma de reclamação e notificação; da reclamação escrita e verbal; da legitimidade para ajuizar.",
+          "subtopicos": [
+            "Dos dissídios individuais: da forma de reclamação e notificação;",
+            "da reclamação escrita e verbal;",
+            "da legitimidade para ajuizar."
+          ]
+        },
+        {
+          "id": "nocoes-de-direito-processual-do-trabalho-10",
+          "titulo": "Do procedimento ordinário e sumaríssimo."
+        },
+        {
+          "id": "nocoes-de-direito-processual-do-trabalho-11",
+          "titulo": "Execução: Procedimentos; Embargos à execução; Praça e leilão; Arrematação.",
+          "subtopicos": [
+            "Execução: Procedimentos;",
+            "Embargos à execução;",
+            "Praça e leilão;",
+            "Arrematação."
+          ]
+        },
+        {
+          "id": "nocoes-de-direito-processual-do-trabalho-12",
+          "titulo": "Recursos no processo do trabalho."
+        },
+        {
+          "id": "nocoes-de-direito-processual-do-trabalho-13",
+          "titulo": "Informatização do Processo Judicial (Lei nº 11.419/2006 e alterações)."
+        }
+      ],
+      "normas": [
+        "CLT (Título X, processo judiciário do trabalho) - base implícita",
+        "Código de Processo Civil (aplicação subsidiária)",
+        "Lei nº 11.419/2006 (informatização do processo judicial)"
+      ]
+    }
+  ]
+}
