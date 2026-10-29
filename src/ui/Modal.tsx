@@ -14,8 +14,11 @@ interface Props {
 export function Modal({ titulo, subtitulo, onClose, children, rodape, largo }: Props) {
   const ref = useRef<HTMLDivElement>(null)
 
+  const fechar = useRef(onClose)
+  fechar.current = onClose
+
   useEffect(() => {
-    const tecla = (e: KeyboardEvent) => e.key === 'Escape' && onClose()
+    const tecla = (e: KeyboardEvent) => e.key === 'Escape' && fechar.current()
     document.addEventListener('keydown', tecla)
     const antes = document.body.style.overflow
     document.body.style.overflow = 'hidden'
@@ -24,7 +27,7 @@ export function Modal({ titulo, subtitulo, onClose, children, rodape, largo }: P
       document.removeEventListener('keydown', tecla)
       document.body.style.overflow = antes
     }
-  }, [onClose])
+  }, [])
 
   return (
     <div className="overlay" onMouseDown={(e) => e.target === e.currentTarget && onClose()}>

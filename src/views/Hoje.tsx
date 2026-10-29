@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { AlertCircle, CalendarClock, CheckCheck, RefreshCw, Timer } from 'lucide-react'
 import type { Store } from '../store'
-import { diffDias, fmtData, hojeISO } from '../lib/dates'
+import { diffDias, fmtData, fmtMin, hojeISO } from '../lib/dates'
 import { prioridade, revisoesPendentes } from '../lib/revisoes'
 import { Confirm } from '../ui/Modal'
 import { useToast } from '../ui/Toast'
@@ -27,7 +27,7 @@ export default function Hoje({ store }: { store: Store }) {
   return (
     <>
       <div className="stats">
-        <Stat icone={<Timer size={20} />} valor={Math.max(diffDias(estado.dataProva, hoje), 0)} rotulo="dias para a prova" tom="verde" />
+        <Stat icone={<Timer size={20} />} valor={fmtMin(doDia.reduce((s, d) => s + d.minPdf + d.minVideo, 0))} rotulo="de estudo planejado hoje" tom="verde" />
         <Stat icone={<RefreshCw size={20} />} valor={revisoes.length} rotulo="revisões vencidas" tom={revisoes.length ? 'rosa' : 'neutro'} />
         <Stat icone={<AlertCircle size={20} />} valor={atrasados.length} rotulo="dias atrasados" tom={atrasados.length ? 'ambar' : 'neutro'} />
         <Stat icone={<CheckCheck size={20} />} valor={`${concluidos}/${estado.dias.length}`} rotulo="dias concluídos" tom="azul" />

@@ -1,4 +1,4 @@
-import { Clock, Flag, Maximize2 } from 'lucide-react'
+import { Check, Clock, Flag, Maximize2, Undo2 } from 'lucide-react'
 import type { DiaEstudo, Status } from '../types'
 import { fmtData, fmtDiaSemana, fmtMin } from '../lib/dates'
 import { GRUPO_COR, grupoDe } from '../lib/grupos'
@@ -62,7 +62,18 @@ export function DiaCard({
         <span className="tempo">
           <Clock size={14} /> {fmtMin(dia.minPdf + dia.minVideo)} <small>(PDF {fmtMin(dia.minPdf)})</small>
         </span>
-        <StatusSelect dia={dia} onChange={onStatus} />
+        <div className="acoes-card">
+          {dia.status === 'Concluído' ? (
+            <button className="btn btn-sm" onClick={() => onStatus('Pendente')}>
+              <Undo2 size={14} /> Desfazer
+            </button>
+          ) : (
+            <button className="btn btn-primario btn-sm" onClick={() => onStatus('Concluído')}>
+              <Check size={14} /> Concluir
+            </button>
+          )}
+          <StatusSelect dia={dia} onChange={onStatus} />
+        </div>
       </div>
     </article>
   )

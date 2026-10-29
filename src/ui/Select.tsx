@@ -30,14 +30,20 @@ export function Select<T extends string>({ value, options, onChange, icon, varia
     const fechar = (e: Event) => {
       if (!(e.target as HTMLElement).closest?.('.sel-menu') && !btn.current?.contains(e.target as Node)) setAberto(false)
     }
-    const sair = () => setAberto(false)
+    const reposicionar = (e: Event) => {
+      if ((e.target as HTMLElement | Document).nodeType === 1 && (e.target as HTMLElement).closest?.('.sel-menu')) return
+      if (!btn.current) return
+      const r = btn.current.getBoundingClientRect()
+      if (r.bottom < 0 || r.top > window.innerHeight) return setAberto(false)
+      setPos((p) => ({ ...p, top: r.bottom + 6, left: r.left }))
+    }
     document.addEventListener('mousedown', fechar)
-    window.addEventListener('resize', sair)
-    window.addEventListener('scroll', sair, true)
+    window.addEventListener('resize', reposicionar)
+    window.addEventListener('scroll', reposicionar, true)
     return () => {
       document.removeEventListener('mousedown', fechar)
-      window.removeEventListener('resize', sair)
-      window.removeEventListener('scroll', sair, true)
+      window.removeEventListener('resize', reposicionar)
+      window.removeEventListener('scroll', reposicionar, true)
     }
   }, [aberto])
 
@@ -89,7 +95,7 @@ export function Select<T extends string>({ value, options, onChange, icon, varia
         <ChevronDown size={14} className="sel-seta" />
       </button>
       {aberto && (
-        <ul className="sel-menu" role="listbox" style={pos} onClick={(e) => e.stopPropagation()}>
+        <ul className="sel-menu" role="listbox" style={pos} onMouseDown={(e) => e.preventDefault()} onClick={(e) => e.stopPropagation()}>
           {options.map((o, i) => (
             <li
               key={o.value}
