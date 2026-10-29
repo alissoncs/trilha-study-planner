@@ -3,19 +3,22 @@ import { Link } from 'react-router-dom'
 import { AlertCircle, CalendarClock, CheckCheck, RefreshCw, Timer } from 'lucide-react'
 import { useEstudos } from '../StoreContext'
 import { useDiaAberto } from '../useDiaAberto'
-import { diffDias, fmtData, fmtMin, hojeISO } from '../lib/dates'
+import { diffDias, fmtData, fmtMin } from '../lib/dates'
 import { prioridade, revisoesPendentes } from '../lib/revisoes'
 import { Confirm } from '../ui/Modal'
 import { useToast } from '../ui/Toast'
 import { DiaCard, numeroDia } from './DiaCard'
 import { Stat } from './Stat'
+import { RevisaoItem } from './RevisaoItem'
+import { somaMin } from '../lib/tempo'
+import { useHoje } from '../useHoje'
 
 export default function Hoje() {
-  const { estado, atualizarDia, marcarRevisao, reagendarAtrasados } = useEstudos()
+  const { estado, atualizarDia, reagendarAtrasados } = useEstudos()
   const toast = useToast()
   const { abrir } = useDiaAberto()
   const [confirmar, setConfirmar] = useState(false)
-  const hoje = hojeISO()
+  const hoje = useHoje()
   const doDia = estado.dias.filter((d) => d.data === hoje)
   const atrasados = estado.dias
     .filter((d) => d.data < hoje && d.status !== 'Concluído')
@@ -28,7 +31,7 @@ export default function Hoje() {
   return (
     <>
       <div className="stats">
-        <Stat icone={<Timer size={20} />} valor={fmtMin(doDia.reduce((s, d) => s + d.minPdf + d.minVideo, 0))} rotulo="de estudo planejado hoje" tom="verde" />
+        <Stat icone={<Timer size={20} />} valor={fmtMin(somaMin(doDia))} rotulo="de estudo planejado hoje" tom="verde" />
         <Stat icone={<RefreshCw size={20} />} valor={revisoes.length} rotulo="revisões vencidas" tom={revisoes.length ? 'rosa' : 'neutro'} />
         <Stat icone={<AlertCircle size={20} />} valor={atrasados.length} rotulo="dias atrasados" tom={atrasados.length ? 'ambar' : 'neutro'} />
         <Stat icone={<CheckCheck size={20} />} valor={`${concluidos}/${estado.dias.length}`} rotulo="dias concluídos" tom="azul" />
@@ -55,15 +58,7 @@ export default function Hoje() {
         <h3 className="secao serif">Revisões vencidas</h3>
         {revisoes.length === 0 && <div className="vazio"><CheckCheck size={28} /><p>Nenhuma revisão vencida.</p></div>}
         {revisoes.map((r) => (
-          <label key={r.dia.id + r.chave} className="linha">
-            <input type="checkbox" className="check" checked={false} onChange={() => (marcarRevisao(r.dia.id, r.chave, true), toast('Revisão registrada'))} />
-            <span>
-              <strong>{r.chave.toUpperCase()}</strong> · {r.dia.disciplina}
-              <small>
-                {numeroDia(r.dia)} · venceu em {fmtData(r.vence)}
-              </small>
-            </span>
-          </label>
+          <RevisaoItem key={r.dia.id + r.chave} r={r} detalhe={`venceu em ${fmtData(r.vence)}`} />
         ))}
       </section>
 

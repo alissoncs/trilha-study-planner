@@ -1,4 +1,5 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { ArrowDown, CalendarDays, ArrowUp, ChevronsUpDown, Flag, Search } from 'lucide-react'
 import { useEstudos } from '../StoreContext'
 import { useDiaAberto } from '../useDiaAberto'
@@ -43,17 +44,47 @@ const valorDe = (d: DiaEstudo, c: Chave): string | number => {
 
 export default function Cronograma() {
   const { estado, atualizarDia, marcarRevisao } = useEstudos()
-  const [grupo, setGrupo] = useState('')
-  const [status, setStatus] = useState<Status | ''>('')
-  const [relev, setRelev] = useState<Relevancia | ''>('')
-  const [busca, setBusca] = useState('')
+  const [params, setParams] = useSearchParams()
+  const grupoP = params.get('materia') ?? ''
+  const grupo = (GRUPOS as readonly string[]).includes(grupoP) ? grupoP : ''
+  const statusP = params.get('status') ?? ''
+  const status = (STATUS as readonly string[]).includes(statusP) ? (statusP as Status) : ''
+  const relevP = params.get('relev') ?? ''
+  const relev = (RELEVANCIAS as string[]).includes(relevP) ? (relevP as Relevancia) : ''
+  const busca = params.get('q') ?? ''
+  const chaveP = params.get('ord') ?? ''
+  const chaveOrd: Chave = COLUNAS.some((c) => c.chave === chaveP) ? (chaveP as Chave) : 'n'
+  const ordem = { chave: chaveOrd, asc: params.get('dir') !== 'desc' }
+
+  // Atualiza só os parâmetros dados, preservando os demais (ex.: `dia`).
+  const mudar = (novos: Record<string, string>) =>
+    setParams(
+      (p) => {
+        const q = new URLSearchParams(p)
+        for (const [k, v] of Object.entries(novos)) v ? q.set(k, v) : q.delete(k)
+        return q
+      },
+      { replace: true },
+    )
+
+  const [buscaLocal, setBuscaLocal] = useState(busca)
+  useEffect(() => setBuscaLocal(busca), [busca])
+  useEffect(() => {
+    if (buscaLocal === busca) return
+    const t = setTimeout(() => mudar({ q: buscaLocal }), 250)
+    return () => clearTimeout(t)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [buscaLocal])
   const { abrir } = useDiaAberto()
   const [calendario, setCalendario] = useState(false)
-  const [ordem, setOrdem] = useState<{ chave: Chave; asc: boolean }>({ chave: 'n', asc: true })
   const hoje = hojeISO()
 
   const ordenar = (chave: Chave) =>
-    setOrdem((o) => (o.chave === chave ? { chave, asc: !o.asc } : { chave, asc: true }))
+    mudar(
+      ordem.chave === chave
+        ? { ord: chave, dir: ordem.asc ? 'desc' : '' }
+        : { ord: chave, dir: '' },
+    )
 
   const dias = useMemo(() => {
     const termo = busca.toLowerCase()
@@ -77,11 +108,11 @@ export default function Cronograma() {
       <div className="filtros">
         <div className="busca">
           <Search size={16} />
-          <input placeholder="Buscar no cronograma…" value={busca} onChange={(e) => setBusca(e.target.value)} />
+          <input placeholder="Buscar no cronograma…" value={buscaLocal} aria-label="Buscar no cronograma" onChange={(e) => setBuscaLocal(e.target.value)} />
         </div>
-        <Select value={grupo} options={opts('Todas as matérias', GRUPOS)} onChange={setGrupo} label="Matéria" />
-        <Select value={status} options={opts('Todos os status', STATUS)} onChange={setStatus} label="Status" />
-        <Select value={relev} options={opts('Toda relevância', RELEVANCIAS)} onChange={setRelev} label="Relevância" />
+        <Select value={grupo} options={opts('Todas as matérias', GRUPOS)} onChange={(v) => mudar({ materia: v })} label="Matéria" />
+        <Select value={status} options={opts('Todos os status', STATUS)} onChange={(v) => mudar({ status: v })} label="Status" />
+        <Select value={relev} options={opts('Toda relevância', RELEVANCIAS)} onChange={(v) => mudar({ relev: v })} label="Relevância" />
         <span className="contagem-filtro">{dias.length} dias</span>
         <button className="btn" onClick={() => setCalendario(true)}>
           <CalendarDays size={15} /> Calendário

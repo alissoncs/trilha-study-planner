@@ -1,12 +1,13 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ChevronRight, Flag } from 'lucide-react'
 import { useEstudos } from '../StoreContext'
 import type { Cargo, Edital } from '../types'
 import { Select } from '../ui/Select'
-import tecnico from '../data/edital-tecnico.json'
-import analista from '../data/edital-analista.json'
 
-const EDITAIS: Record<Cargo, Edital> = { tecnico: tecnico as Edital, analista: analista as Edital }
+const CARREGAR: Record<Cargo, () => Promise<{ default: unknown }>> = {
+  tecnico: () => import('../data/edital-tecnico.json'),
+  analista: () => import('../data/edital-analista.json'),
+}
 const CARGOS = [
   { value: 'tecnico' as Cargo, label: 'Técnico Judiciário' },
   { value: 'analista' as Cargo, label: 'Analista Judiciário' },
@@ -14,14 +15,26 @@ const CARGOS = [
 
 export default function EditalView() {
   const { estado, configurar } = useEstudos()
-  const edital = EDITAIS[estado.cargo]
+  const [carregado, setCarregado] = useState<{ cargo: Cargo; edital: Edital } | null>(null)
+  const [erro, setErro] = useState(false)
+  useEffect(() => {
+    let vivo = true
+    setErro(false)
+    CARREGAR[estado.cargo]()
+      .then((m) => vivo && setCarregado({ cargo: estado.cargo, edital: m.default as Edital }))
+      .catch(() => vivo && setErro(true))
+    return () => {
+      vivo = false
+    }
+  }, [estado.cargo])
+  const edital = carregado?.cargo === estado.cargo ? carregado.edital : null
   const [aberta, setAberta] = useState<string | null>(null)
   const feitos = estado.topicosFeitos
 
   const alternar = (id: string, v: boolean) => configurar({ topicosFeitos: { ...feitos, [id]: v } })
   const marcarRevisar = (id: string) => configurar({ topicosRevisar: { ...estado.topicosRevisar, [id]: !estado.topicosRevisar[id] } })
-  const totalTopicos = edital.disciplinas.reduce((s, d) => s + d.topicos.length, 0)
-  const totalFeitos = edital.disciplinas.reduce((s, d) => s + d.topicos.filter((t) => feitos[t.id]).length, 0)
+  const totalTopicos = !edital ? 0 : edital.disciplinas.reduce((s, d) => s + d.topicos.length, 0)
+  const totalFeitos = !edital ? 0 : edital.disciplinas.reduce((s, d) => s + d.topicos.filter((t) => feitos[t.id]).length, 0)
 
   return (
     <>
@@ -31,7 +44,8 @@ export default function EditalView() {
           {totalFeitos}/{totalTopicos} tópicos estudados
         </span>
       </div>
-      {edital.disciplinas.map((d) => {
+      {!edital && <p className="dica" role="status">{erro ? 'Não foi possível carregar o edital.' : 'Carregando edital…'}</p>}
+      {edital?.disciplinas.map((d) => {
         const f = d.topicos.filter((t) => feitos[t.id]).length
         const pct = (f / d.topicos.length) * 100
         const isAberta = aberta === d.id

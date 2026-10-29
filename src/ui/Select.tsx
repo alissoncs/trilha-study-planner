@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import { Check, ChevronDown } from 'lucide-react'
 import type { ReactNode } from 'react'
 
@@ -22,6 +22,8 @@ export function Select<T extends string>({ value, options, onChange, icon, varia
   const [aberto, setAberto] = useState(false)
   const [pos, setPos] = useState({ top: 0, left: 0, minWidth: 0 })
   const [ativo, setAtivo] = useState(0)
+  const uid = useId()
+  const idOpt = (i: number) => `${uid}-opt-${i}`
   const btn = useRef<HTMLButtonElement>(null)
   const atual = options.find((o) => o.value === value)
 
@@ -72,6 +74,8 @@ export function Select<T extends string>({ value, options, onChange, icon, varia
     if (e.key === 'Escape') setAberto(false)
     else if (e.key === 'ArrowDown') (e.preventDefault(), setAtivo((a) => Math.min(a + 1, options.length - 1)))
     else if (e.key === 'ArrowUp') (e.preventDefault(), setAtivo((a) => Math.max(a - 1, 0)))
+    else if (e.key === 'Home') (e.preventDefault(), setAtivo(0))
+    else if (e.key === 'End') (e.preventDefault(), setAtivo(options.length - 1))
     else if (e.key === 'Enter') (e.preventDefault(), escolher(options[ativo].value))
   }
 
@@ -83,6 +87,8 @@ export function Select<T extends string>({ value, options, onChange, icon, varia
         className={`sel sel-${variant} ${tone}`}
         aria-haspopup="listbox"
         aria-expanded={aberto}
+        aria-controls={aberto ? `${uid}-lista` : undefined}
+        aria-activedescendant={aberto ? idOpt(ativo) : undefined}
         aria-label={label}
         onClick={(e) => {
           e.stopPropagation()
@@ -95,10 +101,11 @@ export function Select<T extends string>({ value, options, onChange, icon, varia
         <ChevronDown size={14} className="sel-seta" />
       </button>
       {aberto && (
-        <ul className="sel-menu" role="listbox" style={pos} onMouseDown={(e) => e.preventDefault()} onClick={(e) => e.stopPropagation()}>
+        <ul id={`${uid}-lista`} className="sel-menu" role="listbox" aria-label={label} style={pos} onMouseDown={(e) => e.preventDefault()} onClick={(e) => e.stopPropagation()}>
           {options.map((o, i) => (
             <li
               key={o.value}
+              id={idOpt(i)}
               role="option"
               aria-selected={o.value === value}
               className={`${i === ativo ? 'ativo' : ''} ${o.value === value ? 'sel-atual' : ''}`}

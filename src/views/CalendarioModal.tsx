@@ -63,9 +63,9 @@ export function CalendarioModal({ onClose }: { onClose: () => void }) {
         <h4 className="cal-titulo serif">{titulo}</h4>
       </div>
 
-      <div className="cal-grade" role="grid" aria-label={titulo}>
+      <div className="cal-grade">
         {SEMANA.map((s) => (
-          <div key={s} className="cal-cab" role="columnheader">
+          <div key={s} className="cal-cab" aria-hidden="true">
             {s}
           </div>
         ))}
@@ -73,8 +73,15 @@ export function CalendarioModal({ onClose }: { onClose: () => void }) {
           const doMes = Number(data.slice(5, 7)) - 1 === mes
           const eventos = porData.get(data) ?? []
           return (
-            <div key={data} role="gridcell" className={`cal-dia ${doMes ? '' : 'fora'} ${data === hoje ? 'hoje' : ''}`}>
-              <span className="cal-num">{Number(data.slice(8))}</span>
+            <section
+              key={data}
+              aria-label={new Date(`${data}T12:00:00`).toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
+              className={`cal-dia ${doMes ? '' : 'fora'} ${data === hoje ? 'hoje' : ''} ${eventos.length ? '' : 'vazio'}`}
+            >
+              <span className="cal-num" aria-hidden="true">{Number(data.slice(8))}</span>
+              <span className="cal-dataext" aria-hidden="true">
+                {new Date(`${data}T12:00:00`).toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' })}
+              </span>
               {eventos.map((d) => (
                 <button
                   key={d.id}
@@ -90,10 +97,13 @@ export function CalendarioModal({ onClose }: { onClose: () => void }) {
                   </small>
                 </button>
               ))}
-            </div>
+            </section>
           )
         })}
       </div>
+      {!semanas.flat().some((d) => d.slice(0, 7) === iso(ano, mes, 1).slice(0, 7) && porData.has(d)) && (
+        <p className="cal-vazio-msg">Nenhum dia de estudo neste mês.</p>
+      )}
     </Modal>
   )
 }

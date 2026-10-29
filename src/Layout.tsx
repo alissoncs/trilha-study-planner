@@ -1,8 +1,10 @@
-import { useMemo } from 'react'
+import { Suspense, useMemo } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { GraduationCap } from 'lucide-react'
 import { useEstudos } from './StoreContext'
-import { diffDias, fmtData, hojeISO } from './lib/dates'
+import { diffDias, fmtData } from './lib/dates'
+import { percentual, somaMin } from './lib/tempo'
+import { useHoje } from './useHoje'
 import { ROTAS } from './routes'
 import { useDiaAberto } from './useDiaAberto'
 import { DiaModal } from './views/DiaModal'
@@ -19,13 +21,12 @@ export function Layout() {
   const { id: diaAberto, fechar } = useDiaAberto()
   const atual = ROTAS.find((r) => pathname === `/${r.path}`)
 
-  const faltam = Math.max(diffDias(estado.dataProva, hojeISO()), 0)
-  const progresso = useMemo(() => {
-    const minutos = (d: (typeof estado.dias)[number]) => d.minPdf + d.minVideo
-    const total = estado.dias.reduce((t, d) => t + minutos(d), 0)
-    const feito = estado.dias.filter((d) => d.status === 'Concluído').reduce((t, d) => t + minutos(d), 0)
-    return total ? Math.round((feito / total) * 100) : 0
-  }, [estado.dias])
+  const hoje = useHoje()
+  const faltam = Math.max(diffDias(estado.dataProva, hoje), 0)
+  const progresso = useMemo(
+    () => percentual(somaMin(estado.dias.filter((d) => d.status === 'Concluído')), somaMin(estado.dias)),
+    [estado.dias],
+  )
 
   return (
     <div className="shell">
@@ -71,7 +72,9 @@ export function Layout() {
           </header>
         )}
         <ErrorBoundary key={pathname}>
-          <Outlet />
+          <Suspense fallback={<p className="dica" role="status">Carregando…</p>}>
+            <Outlet />
+          </Suspense>
         </ErrorBoundary>
       </main>
       {diaAberto && <DiaModal id={diaAberto} onClose={fechar} />}

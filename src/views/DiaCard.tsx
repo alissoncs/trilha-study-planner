@@ -47,9 +47,9 @@ export function DiaCard({
           {numeroDia(dia)} · {fmtDiaSemana(dia.data)}, {fmtData(dia.data)}
         </span>
         <Chip r={dia.relevancia} />
-        {dia.revisar && <Flag size={14} className="flag-on" />}
+        {dia.revisar && <Flag size={14} className="flag-on" aria-label="Precisa revisar" role="img" />}
         {extra && <span className="atraso">{extra}</span>}
-        <button className="icone-btn empurra" aria-label="Abrir detalhes" onClick={onAbrir}>
+        <button className="icone-btn empurra" aria-label={`Abrir detalhes do ${numeroDia(dia)}`} onClick={onAbrir}>
           <Maximize2 size={15} />
         </button>
       </div>

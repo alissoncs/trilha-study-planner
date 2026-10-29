@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import { Flag } from 'lucide-react'
 import { useEstudos } from '../StoreContext'
 import { fmtData, fmtMin, hojeISO } from '../lib/dates'
@@ -8,6 +9,35 @@ import { Chip, StatusSelect, numeroDia } from './DiaCard'
 export function DiaModal({ id, onClose }: { id: string; onClose: () => void }) {
   const { estado, atualizarDia, marcarRevisao } = useEstudos()
   const dia = estado.dias.find((d) => d.id === id)
+
+  // Anotações: estado local, gravado no store com debounce e ao desmontar.
+  const [nota, setNota] = useState(dia?.anotacoes ?? '')
+  const pendente = useRef<string | null>(null)
+  const timer = useRef<ReturnType<typeof setTimeout>>()
+  const gravar = useRef<(texto: string) => void>(() => {})
+  gravar.current = (texto) => atualizarDia(id, { anotacoes: texto })
+  const flush = () => {
+    clearTimeout(timer.current)
+    if (pendente.current !== null) {
+      gravar.current(pendente.current)
+      pendente.current = null
+    }
+  }
+  useEffect(() => flush, []) // eslint-disable-line react-hooks/exhaustive-deps
+  const aoDigitar = (texto: string) => {
+    setNota(texto)
+    pendente.current = texto
+    clearTimeout(timer.current)
+    timer.current = setTimeout(flush, 400)
+  }
+
+  const fechar = useRef(onClose)
+  fechar.current = onClose
+  const existe = !!dia
+  useEffect(() => {
+    if (!existe) fechar.current()
+  }, [existe])
+
   if (!dia) return null
   const revs = revisoesDe(dia, estado.intervalos)
 
@@ -18,7 +48,7 @@ export function DiaModal({ id, onClose }: { id: string; onClose: () => void }) {
       subtitulo={`${numeroDia(dia)} · ${fmtData(dia.data)} · ${fmtMin(dia.minPdf + dia.minVideo)} de estudo`}
       onClose={onClose}
       rodape={
-        <button className="btn btn-primario" onClick={onClose}>
+        <button className="btn btn-primario" onClick={() => { flush(); onClose() }}>
           Fechar
         </button>
       }
@@ -45,7 +75,12 @@ export function DiaModal({ id, onClose }: { id: string; onClose: () => void }) {
             max={100}
             placeholder="ex.: 78"
             value={dia.acertos ?? ''}
-            onChange={(e) => atualizarDia(dia.id, { acertos: e.target.value === '' ? null : Number(e.target.value) })}
+            onChange={(e) => {
+              const n = Number(e.target.value)
+              atualizarDia(dia.id, {
+                acertos: e.target.value === '' || !Number.isFinite(n) ? null : Math.min(100, Math.max(0, Math.round(n))),
+              })
+            }}
           />
         </div>
         <div className="campo">
@@ -85,8 +120,9 @@ export function DiaModal({ id, onClose }: { id: string; onClose: () => void }) {
           className="input"
           rows={5}
           placeholder="Dúvidas, macetes, o que errar nas questões…"
-          value={dia.anotacoes}
-          onChange={(e) => atualizarDia(dia.id, { anotacoes: e.target.value })}
+          value={nota}
+          onChange={(e) => aoDigitar(e.target.value)}
+          onBlur={flush}
         />
       </div>
     </Modal>

@@ -1,4 +1,4 @@
-import type { DiaEstudo, Estado, RevKey } from '../types'
+import type { DiaEstudo, Estado, Relevancia, RevKey } from '../types'
 import { addDias } from './dates'
 
 export const REV_KEYS: RevKey[] = ['r7', 'r14', 'r30']
@@ -22,9 +22,9 @@ export const revisoesPendentes = (dias: DiaEstudo[], intervalos: Estado['interva
     .sort((a, b) => a.vence.localeCompare(b.vence))
 
 // Peso de prioridade: relevância + quantos dias de atraso.
-const PESO: Record<string, number> = { Altíssima: 3, Alta: 2, Média: 1, Especial: 0 }
+const PESO: Record<Relevancia, number> = { Altíssima: 3, Alta: 2, Média: 1, Especial: 0 }
 export const prioridade = (d: DiaEstudo, atrasoDias: number) =>
-  (PESO[d.relevancia] ?? 0) * 10 + Math.min(atrasoDias, 30)
+  PESO[d.relevancia] * 10 + Math.min(atrasoDias, 30)
 
 export const revisoesFeitas = (dias: DiaEstudo[]) =>
   dias

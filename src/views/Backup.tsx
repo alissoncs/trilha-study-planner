@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import { Download, RotateCcw, Upload } from 'lucide-react'
 import { useEstudos } from '../StoreContext'
-import { normalizar } from '../lib/storage'
+import { isISO, normalizar } from '../lib/storage'
 import { Confirm } from '../ui/Modal'
 import { useToast } from '../ui/Toast'
 
@@ -56,11 +56,14 @@ export default function Backup() {
         <div className="grade-campos">
           <label className="campo">
             <span className="rotulo">Data da prova</span>
-            <input className="input" type="date" value={estado.dataProva} onChange={(e) => configurar({ dataProva: e.target.value })} />
+            <input className="input" type="date" value={estado.dataProva} onChange={(e) => isISO(e.target.value) && configurar({ dataProva: e.target.value })} />
           </label>
           <label className="campo">
             <span className="rotulo">Revisar se acertos &lt; (%)</span>
-            <input className="input" type="number" min={0} max={100} value={estado.limiteAcertos} onChange={(e) => configurar({ limiteAcertos: Number(e.target.value) })} />
+            <input className="input" type="number" min={0} max={100} value={estado.limiteAcertos} onChange={(e) => {
+                const n = Number(e.target.value)
+                if (e.target.value !== '' && Number.isFinite(n)) configurar({ limiteAcertos: Math.min(100, Math.max(0, n)) })
+              }} />
           </label>
           {(['r7', 'r14', 'r30'] as const).map((k) => (
             <label key={k} className="campo">
@@ -70,7 +73,10 @@ export default function Backup() {
                 type="number"
                 min={1}
                 value={estado.intervalos[k]}
-                onChange={(e) => configurar({ intervalos: { ...estado.intervalos, [k]: Math.max(1, Number(e.target.value)) } })}
+                onChange={(e) => {
+                  const n = Math.round(Number(e.target.value))
+                  if (e.target.value !== '' && Number.isFinite(n)) configurar({ intervalos: { ...estado.intervalos, [k]: Math.max(1, n) } })
+                }}
               />
             </label>
           ))}

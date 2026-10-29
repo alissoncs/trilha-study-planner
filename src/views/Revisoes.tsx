@@ -1,16 +1,18 @@
 import { CheckCheck, Flag, RotateCcw } from 'lucide-react'
 import { useEstudos } from '../StoreContext'
 import { useDiaAberto } from '../useDiaAberto'
-import { diffDias, fmtData, hojeISO } from '../lib/dates'
+import { diffDias, fmtData } from '../lib/dates'
 import { precisaRevisar, revisoesFeitas, revisoesPendentes } from '../lib/revisoes'
 import { useToast } from '../ui/Toast'
 import { numeroDia } from './DiaCard'
+import { RevisaoItem } from './RevisaoItem'
+import { useHoje } from '../useHoje'
 
 export default function Revisoes() {
   const { estado, atualizarDia, marcarRevisao } = useEstudos()
   const toast = useToast()
   const { abrir } = useDiaAberto()
-  const hoje = hojeISO()
+  const hoje = useHoje()
   const pend = revisoesPendentes(estado.dias, estado.intervalos)
   const vencidas = pend.filter((r) => r.vence < hoje)
   const deHoje = pend.filter((r) => r.vence === hoje)
@@ -19,15 +21,11 @@ export default function Revisoes() {
   const feitas = revisoesFeitas(estado.dias)
 
   const item = (r: (typeof pend)[number], atraso = false) => (
-    <label key={r.dia.id + r.chave} className="linha">
-      <input type="checkbox" className="check" checked={false} onChange={() => (marcarRevisao(r.dia.id, r.chave, true), toast('Revisão registrada'))} />
-      <span>
-        <strong>{r.chave.toUpperCase()}</strong> · {r.dia.disciplina}
-        <small>
-          {numeroDia(r.dia)} · {atraso ? `venceu em ${fmtData(r.vence)} (${diffDias(hoje, r.vence)}d de atraso)` : `vence em ${fmtData(r.vence)}`}
-        </small>
-      </span>
-    </label>
+    <RevisaoItem
+      key={r.dia.id + r.chave}
+      r={r}
+      detalhe={atraso ? `venceu em ${fmtData(r.vence)} (${diffDias(hoje, r.vence)}d de atraso)` : undefined}
+    />
   )
   const vazio = (txt: string) => (
     <div className="vazio">

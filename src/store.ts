@@ -1,7 +1,12 @@
 import { useCallback, useEffect, useState } from 'react'
 import type { DiaEstudo, Estado, RevKey } from './types'
 import { carregar, estadoInicial, salvar } from './lib/storage'
+import { grupoDe } from './lib/grupos'
 import { addDias, diffDias, hojeISO } from './lib/dates'
+
+// O dia da prova (não a véspera de descanso) não é reagendado.
+const ehDiaDaProva = (d: DiaEstudo) =>
+  d.relevancia === 'Especial' && grupoDe(d.disciplina) === 'Prova e Descanso' && /prova/i.test(d.disciplina)
 
 export function useStore() {
   const [estado, setEstado] = useState<Estado>(carregar)
@@ -39,7 +44,7 @@ export function useStore() {
   const reagendarAtrasados = useCallback(() => {
     setEstado((e) => {
       const hoje = hojeISO()
-      const pend = e.dias.filter((d) => d.status !== 'Concluído' && d.disciplina !== 'DIA DA PROVA TRT-4!')
+      const pend = e.dias.filter((d) => d.status !== 'Concluído' && !ehDiaDaProva(d))
       if (!pend.length) return e
       const desloc = diffDias(hoje, pend.reduce((m, d) => (d.data < m ? d.data : m), pend[0].data))
       if (desloc <= 0) return e

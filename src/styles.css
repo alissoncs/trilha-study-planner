@@ -191,4 +191,13 @@ tr.atrasado .data-col { color: var(--bad); font-weight: 600; }
 .cal-evento small { color: var(--mut); font-size: 10.5px; }
 .cal-evento.feito { opacity: .55; } .cal-evento.feito strong { text-decoration: line-through; }
 .cal-evento.atrasado { outline: 1px solid var(--bad); }
-@media (max-width: 720px) { .cal-dia { min-height: 80px; padding: 3px; } .cal-evento span, .cal-evento small { display: none; } }
+.cal-dataext, .cal-vazio-msg { display: none; }
+@media (max-width: 720px) {
+  .cal-grade { grid-template-columns: minmax(0, 1fr); }
+  .cal-cab, .cal-dia.vazio, .cal-dia.fora { display: none; }
+  .cal-dia { min-height: 0; padding: 8px 10px; border-right: 0; }
+  .cal-num { display: none; }
+  .cal-dataext { display: block; font-size: 12.5px; font-weight: 600; text-transform: capitalize; color: var(--mut); }
+  .cal-dia.hoje .cal-dataext { color: var(--pri); }
+  .cal-vazio-msg { display: block; text-align: center; color: var(--mut); padding: 12px; }
+}

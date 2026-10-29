@@ -1,13 +1,14 @@
+import { lazy } from 'react'
 import { HashRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { StoreProvider } from './StoreContext'
 import { Layout } from './Layout'
-import Hoje from './views/Hoje'
-import Cronograma from './views/Cronograma'
-import Revisoes from './views/Revisoes'
-import Progresso from './views/Progresso'
-import EditalView from './views/EditalView'
-import Provas from './views/Provas'
-import Backup from './views/Backup'
+const Hoje = lazy(() => import('./views/Hoje'))
+const Cronograma = lazy(() => import('./views/Cronograma'))
+const Revisoes = lazy(() => import('./views/Revisoes'))
+const Progresso = lazy(() => import('./views/Progresso'))
+const EditalView = lazy(() => import('./views/EditalView'))
+const Provas = lazy(() => import('./views/Provas'))
+const Backup = lazy(() => import('./views/Backup'))
 
 // HashRouter: o app é estático (base './') e funciona em qualquer hospedagem, sem configurar fallback de rotas.
 export default function App() {
