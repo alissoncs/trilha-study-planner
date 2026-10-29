@@ -1,12 +1,12 @@
 import { useRef, useState } from 'react'
 import { Download, RotateCcw, Upload } from 'lucide-react'
-import type { Store } from '../store'
+import { useEstudos } from '../StoreContext'
 import { normalizar } from '../lib/storage'
 import { Confirm } from '../ui/Modal'
 import { useToast } from '../ui/Toast'
 
-export default function Backup({ store }: { store: Store }) {
-  const { estado, configurar, importar, resetar } = store
+export default function Backup() {
+  const { estado, configurar, importar, resetar } = useEstudos()
   const toast = useToast()
   const arquivo = useRef<HTMLInputElement>(null)
   const [confirmar, setConfirmar] = useState(false)

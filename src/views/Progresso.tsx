@@ -1,11 +1,11 @@
 import { CheckCheck, Clock, Percent } from 'lucide-react'
-import type { Store } from '../store'
+import { useEstudos } from '../StoreContext'
 import { fmtMin } from '../lib/dates'
 import { GRUPOS, GRUPO_COR, grupoDe } from '../lib/grupos'
 import { Stat } from './Stat'
 
-export default function Progresso({ store }: { store: Store }) {
-  const { dias } = store.estado
+export default function Progresso() {
+  const { dias } = useEstudos().estado
   const tempo = (d: { minPdf: number; minVideo: number }) => d.minPdf + d.minVideo
   const total = dias.reduce((s, d) => s + tempo(d), 0)
   const feito = dias.filter((d) => d.status === 'Concluído').reduce((s, d) => s + tempo(d), 0)

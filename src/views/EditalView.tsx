@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { ChevronRight, Flag } from 'lucide-react'
-import type { Store } from '../store'
+import { useEstudos } from '../StoreContext'
 import type { Cargo, Edital } from '../types'
 import { Select } from '../ui/Select'
 import tecnico from '../data/edital-tecnico.json'
@@ -12,8 +12,8 @@ const CARGOS = [
   { value: 'analista' as Cargo, label: 'Analista Judiciário' },
 ]
 
-export default function EditalView({ store }: { store: Store }) {
-  const { estado, configurar } = store
+export default function EditalView() {
+  const { estado, configurar } = useEstudos()
   const edital = EDITAIS[estado.cargo]
   const [aberta, setAberta] = useState<string | null>(null)
   const feitos = estado.topicosFeitos

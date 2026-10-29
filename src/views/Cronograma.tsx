@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { ArrowDown, ArrowUp, ChevronsUpDown, Flag, Search } from 'lucide-react'
+import { ArrowDown, CalendarDays, ArrowUp, ChevronsUpDown, Flag, Search } from 'lucide-react'
 import { useEstudos } from '../StoreContext'
 import { useDiaAberto } from '../useDiaAberto'
 import type { DiaEstudo, Relevancia, Status } from '../types'
@@ -8,6 +8,7 @@ import { GRUPOS, grupoDe } from '../lib/grupos'
 import { revisoesDe } from '../lib/revisoes'
 import { Select } from '../ui/Select'
 import type { Opt } from '../ui/Select'
+import { CalendarioModal } from './CalendarioModal'
 import { Chip, Dot, STATUS, StatusSelect, numeroDia } from './DiaCard'
 
 const RELEVANCIAS: Relevancia[] = ['Altíssima', 'Alta', 'Média', 'Especial']
@@ -47,6 +48,7 @@ export default function Cronograma() {
   const [relev, setRelev] = useState<Relevancia | ''>('')
   const [busca, setBusca] = useState('')
   const { abrir } = useDiaAberto()
+  const [calendario, setCalendario] = useState(false)
   const [ordem, setOrdem] = useState<{ chave: Chave; asc: boolean }>({ chave: 'n', asc: true })
   const hoje = hojeISO()
 
@@ -70,9 +72,6 @@ export default function Cronograma() {
     })
   }, [estado.dias, grupo, status, relev, busca, ordem])
 
-  return (ordem.asc ? c : -c) || a.n - b.n
-  })
-
   return (
     <>
       <div className="filtros">
@@ -84,6 +83,9 @@ export default function Cronograma() {
         <Select value={status} options={opts('Todos os status', STATUS)} onChange={setStatus} label="Status" />
         <Select value={relev} options={opts('Toda relevância', RELEVANCIAS)} onChange={setRelev} label="Relevância" />
         <span className="contagem-filtro">{dias.length} dias</span>
+        <button className="btn" onClick={() => setCalendario(true)}>
+          <CalendarDays size={15} /> Calendário
+        </button>
       </div>
 
       <div className="tabela-wrap">
@@ -160,6 +162,7 @@ export default function Cronograma() {
           </tbody>
         </table>
       </div>
+      {calendario && <CalendarioModal onClose={() => setCalendario(false)} />}
       <p className="dica">Clique em uma linha para abrir os detalhes, anotações e % de acertos.</p>
     </>
   )

@@ -9,21 +9,30 @@ interface Props {
   children: ReactNode
   rodape?: ReactNode
   largo?: boolean
+  xl?: boolean
 }
 
-export function Modal({ titulo, subtitulo, onClose, children, rodape, largo }: Props) {
+const pilha: object[] = []
+
+export function Modal({ titulo, subtitulo, onClose, children, rodape, largo, xl }: Props) {
   const ref = useRef<HTMLDivElement>(null)
 
   const fechar = useRef(onClose)
-  fechar.current = onClose
+  useEffect(() => {
+    fechar.current = onClose
+  })
 
   useEffect(() => {
-    const tecla = (e: KeyboardEvent) => e.key === 'Escape' && fechar.current()
+    // Com modais empilhados, só o do topo responde ao Esc.
+    const token = {}
+    pilha.push(token)
+    const tecla = (e: KeyboardEvent) => e.key === 'Escape' && pilha[pilha.length - 1] === token && fechar.current()
     document.addEventListener('keydown', tecla)
     const antes = document.body.style.overflow
     document.body.style.overflow = 'hidden'
     ref.current?.focus()
     return () => {
+      pilha.splice(pilha.indexOf(token), 1)
       document.removeEventListener('keydown', tecla)
       document.body.style.overflow = antes
     }
@@ -31,7 +40,7 @@ export function Modal({ titulo, subtitulo, onClose, children, rodape, largo }: P
 
   return (
     <div className="overlay" onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
-      <div ref={ref} tabIndex={-1} role="dialog" aria-modal="true" aria-label={titulo} className={`modal ${largo ? 'largo' : ''}`}>
+      <div ref={ref} tabIndex={-1} role="dialog" aria-modal="true" aria-label={titulo} className={`modal ${largo ? 'largo' : ''} ${xl ? 'xl' : ''}`}>
         <header className="modal-topo">
           <div>
             <h3>{titulo}</h3>
