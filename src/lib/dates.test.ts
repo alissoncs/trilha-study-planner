@@ -16,3 +16,12 @@ describe('dates', () => {
     expect(fmtMin(5)).toBe('00h05m')
   })
 })
+
+import { fmtHoras } from './dates'
+describe('fmtHoras', () => {
+  it('formata minutos como h:mm', () => {
+    expect(fmtHoras(196)).toBe('3:16')
+    expect(fmtHoras(60)).toBe('1:00')
+    expect(fmtHoras(5)).toBe('0:05')
+  })
+})

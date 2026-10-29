@@ -1,4 +1,4 @@
-import { Suspense, useMemo } from 'react'
+import { Suspense, useLayoutEffect, useMemo, useRef } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { GraduationCap, Target } from 'lucide-react'
 import { useEstudos } from './StoreContext'
@@ -14,6 +14,19 @@ export function Layout() {
   const { estado } = useEstudos()
   const { pathname } = useLocation()
   const { id: diaAberto, fechar } = useDiaAberto()
+  const topo = useRef<HTMLElement>(null)
+
+  // Expõe a altura do menu fixo para que elementos sticky (ex.: filtros) fiquem logo abaixo dele.
+  useLayoutEffect(() => {
+    const el = topo.current
+    if (!el) return
+    const medir = () => document.documentElement.style.setProperty('--topbar-h', `${el.offsetHeight}px`)
+    medir()
+    const ro = new ResizeObserver(medir)
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [])
+
   const atual = ROTAS.find((r) => pathname === `/${r.path}`)
 
   const hoje = useHoje()
@@ -25,7 +38,7 @@ export function Layout() {
 
   return (
     <div className="shell">
-      <header className="topbar">
+      <header className="topbar" ref={topo}>
         <div className="topbar-in">
           <div className="marca">
             <span className="logo">

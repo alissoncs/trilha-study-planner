@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { ArrowDown, CalendarDays, ArrowUp, ChevronsUpDown, Flag, Search } from 'lucide-react'
+import { ArrowDown, CalendarClock, CalendarDays, Clock, ArrowUp, ChevronsUpDown, Flag, Search } from 'lucide-react'
 import { useEstudos } from '../StoreContext'
 import { useDiaAberto } from '../useDiaAberto'
 import type { DiaEstudo, Relevancia, Status } from '../types'
-import { fmtData, fmtDiaSemana, fmtMin, hojeISO } from '../lib/dates'
+import { fmtData, fmtDiaSemana, fmtHoras, hojeISO } from '../lib/dates'
 import { GRUPOS, grupoDe } from '../lib/grupos'
 import { revisoesDe } from '../lib/revisoes'
 import { Select } from '../ui/Select'
@@ -105,7 +105,13 @@ export default function Cronograma() {
 
   return (
     <>
-      <div className="filtros">
+      <div className="filtros filtros-fixos">
+        <span className="hoje-tag" title="Data de hoje">
+          <CalendarClock size={15} aria-hidden="true" />
+          <span>
+            Hoje · {fmtDiaSemana(hoje)}, {fmtData(hoje)}
+          </span>
+        </span>
         <div className="busca">
           <Search size={16} />
           <input placeholder="Buscar no cronograma…" value={buscaLocal} aria-label="Buscar no cronograma" onChange={(e) => setBuscaLocal(e.target.value)} />
@@ -126,9 +132,11 @@ export default function Cronograma() {
               {COLUNAS.map(({ chave, titulo }) =>
                 chave ? (
                   <th key={chave} aria-sort={ordem.chave === chave ? (ordem.asc ? 'ascending' : 'descending') : 'none'}>
-                    <button className={`th-sort ${ordem.chave === chave ? 'ativa' : ''}`} onClick={() => ordenar(chave)}>
-                      {titulo}
-                      {ordem.chave !== chave ? <ChevronsUpDown size={12} /> : ordem.asc ? <ArrowUp size={12} /> : <ArrowDown size={12} />}
+                    <button className="th-sort" onClick={() => ordenar(chave)}>
+                      <span>{titulo}</span>
+                      <span className="seta" aria-hidden="true">
+                        {ordem.chave !== chave ? <ChevronsUpDown size={13} /> : ordem.asc ? <ArrowUp size={13} /> : <ArrowDown size={13} />}
+                      </span>
                     </button>
                   </th>
                 ) : (
@@ -167,7 +175,12 @@ export default function Cronograma() {
                     {d.disciplina}
                   </td>
                   <td className="conteudo">{d.conteudo}</td>
-                  <td className="nowrap">{fmtMin(d.minPdf + d.minVideo)}</td>
+                  <td className="nowrap">
+                    <span className="tempo-cel" title={`PDF ${fmtHoras(d.minPdf)} · Vídeo/questões ${fmtHoras(d.minVideo)}`}>
+                      <Clock size={13} aria-hidden="true" />
+                      {fmtHoras(d.minPdf + d.minVideo)}
+                    </span>
+                  </td>
                   <td>
                     <Chip r={d.relevancia} />
                   </td>

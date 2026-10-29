@@ -1,4 +1,5 @@
-import { Check, Clock, Flag, Maximize2, Undo2 } from 'lucide-react'
+import { Check, Clock, Flag, Flame, Maximize2, Minus, Star, TrendingUp, Undo2 } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 import type { DiaEstudo, Status } from '../types'
 import { fmtData, fmtDiaSemana, fmtMin } from '../lib/dates'
 import { GRUPO_COR, grupoDe } from '../lib/grupos'
@@ -21,7 +22,22 @@ export function StatusSelect({ dia, onChange }: { dia: DiaEstudo; onChange: (s: 
   )
 }
 
-export const Chip = ({ r }: { r: DiaEstudo['relevancia'] }) => <span className={`chip r-${r}`}>{r}</span>
+const RELEV_ICONE: Record<DiaEstudo['relevancia'], LucideIcon> = {
+  Altíssima: Flame,
+  Alta: TrendingUp,
+  Média: Minus,
+  Especial: Star,
+}
+
+export const Chip = ({ r }: { r: DiaEstudo['relevancia'] }) => {
+  const Icone = RELEV_ICONE[r]
+  return (
+    <span className={`chip r-${r}`}>
+      <Icone size={12} strokeWidth={2.4} aria-hidden="true" />
+      {r}
+    </span>
+  )
+}
 
 export const Dot = ({ disciplina }: { disciplina: string }) => (
   <span className="dot" style={{ background: GRUPO_COR[grupoDe(disciplina)] }} />

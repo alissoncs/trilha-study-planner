@@ -53,6 +53,7 @@ export default function Revisoes() {
   const hoje = useHoje()
   const [filtro, setFiltro] = useState<Filtro>('todas')
   const [expandidas, setExpandidas] = useState<Record<string, boolean>>({})
+  const [histAberto, setHistAberto] = useState(false)
 
   const todas = revisoesPendentes(estado.dias, estado.intervalos)
   const pend = filtro === 'todas' ? todas : todas.filter((r) => r.chave === filtro)
@@ -174,71 +175,79 @@ export default function Revisoes() {
         {coluna('A caminho', <CalendarClock size={17} />, 'azul', proximas, 'Nada nos próximos 14 dias.')}
       </div>
 
-      <div className="rv-baixo">
-        <section className="card">
-          <header className="rv-sec-topo">
-            <h3 className="serif">
-              <Flag size={16} className="flag-on" /> Para reforçar
-            </h3>
-            <span className="badge ambar">{marcados.length}</span>
-          </header>
-          <p className="dica">Dias com ⚑ ou com acertos abaixo de {estado.limiteAcertos}%.</p>
-          {marcados.length === 0 && (
-            <p className="rv-vazio">
-              <CheckCheck size={18} /> Nada marcado para reforço.
-            </p>
-          )}
-          <ul className="rv-lista">
-            {marcados.map((d) => (
-              <li key={d.id} className="rv-reforco">
-                <button className="rv-corpo" onClick={() => abrir(d.id)}>
-                  <strong className="serif">
-                    <span className="dot" style={{ background: GRUPO_COR[grupoDe(d.disciplina)] }} />
-                    {d.disciplina}
-                  </strong>
-                  <small>{numeroDia(d)}</small>
-                  {d.acertos !== null && (
-                    <span className="rv-medidor-linha" title={`${d.acertos}% de acertos`}>
-                      <span className="rv-medidor">
-                        <span style={{ width: `${d.acertos}%` }} className={d.acertos < estado.limiteAcertos ? 'baixo' : ''} />
-                      </span>
-                      <b>{d.acertos}%</b>
+      <section className="rv-secao">
+        <header className="rv-secao-topo">
+          <h3 className="serif">
+            <Flag size={18} className="flag-on" /> Para reforçar
+          </h3>
+          <span className="badge ambar">{marcados.length}</span>
+          <p>Dias marcados com ⚑ ou com acertos abaixo de {estado.limiteAcertos}%.</p>
+        </header>
+        {marcados.length === 0 ? (
+          <p className="rv-vazio rv-vazio-solto">
+            <CheckCheck size={18} /> Nada marcado para reforço. Use o ⚑ no cronograma ou registre o % de acertos.
+          </p>
+        ) : (
+          <ul className="rv-reforcos">
+            {marcados.map((d) => {
+              const baixo = d.acertos !== null && d.acertos < estado.limiteAcertos
+              return (
+                <li key={d.id} className="rv-reforco">
+                  <button className="rv-reforco-corpo" onClick={() => abrir(d.id)}>
+                    <strong className="serif">
+                      <span className="dot" style={{ background: GRUPO_COR[grupoDe(d.disciplina)] }} />
+                      {d.disciplina}
+                    </strong>
+                    <small>{numeroDia(d)}</small>
+                    <span className="rv-motivos">
+                      {d.revisar && <span className="rv-motivo marcado"><Flag size={12} /> Marcado</span>}
+                      {baixo && <span className="rv-motivo baixo">Acertos abaixo do limite</span>}
                     </span>
-                  )}
-                </button>
-                <button
-                  className="btn btn-sm"
-                  onClick={() => {
-                    atualizarDia(d.id, { revisar: false, acertos: d.acertos !== null && d.acertos < estado.limiteAcertos ? null : d.acertos })
-                    toast('Marcação removida')
-                  }}
-                >
-                  Revisei
-                </button>
-              </li>
-            ))}
+                    {d.acertos !== null && (
+                      <span className="rv-medidor-linha" title={`${d.acertos}% de acertos`}>
+                        <span className="rv-medidor">
+                          <span style={{ width: `${d.acertos}%` }} className={baixo ? 'baixo' : ''} />
+                        </span>
+                        <b>{d.acertos}%</b>
+                      </span>
+                    )}
+                  </button>
+                  <button
+                    className="btn btn-sm rv-reforco-ok"
+                    onClick={() => {
+                      atualizarDia(d.id, { revisar: false, acertos: baixo ? null : d.acertos })
+                      toast('Marcação removida')
+                    }}
+                  >
+                    <Check size={14} /> Revisei
+                  </button>
+                </li>
+              )
+            })}
           </ul>
-        </section>
+        )}
+      </section>
 
-        <section className="card">
-          <header className="rv-sec-topo">
-            <h3 className="serif">
-              <History size={16} /> Histórico
-            </h3>
-            <span className="badge verde">{feitas.length}</span>
-          </header>
-          {feitas.length === 0 && (
-            <p className="rv-vazio">
-              <History size={18} /> As revisões feitas aparecem aqui.
-            </p>
-          )}
-          <ol className="rv-linha-tempo">
-            {feitas.slice(0, 12).map((r) => (
+      <section className="rv-secao">
+        <header className="rv-secao-topo">
+          <h3 className="serif">
+            <History size={18} /> Histórico
+          </h3>
+          <span className="badge verde">{feitas.length}</span>
+          <p>Revisões já feitas, da mais recente para a mais antiga.</p>
+        </header>
+        {feitas.length === 0 ? (
+          <p className="rv-vazio rv-vazio-solto">
+            <History size={18} /> As revisões feitas aparecem aqui.
+          </p>
+        ) : (
+          <ol className="rv-historico">
+            {(histAberto ? feitas : feitas.slice(0, 12)).map((r) => (
               <li key={r.dia.id + r.chave}>
                 <span className={`rv-tipo mini k-${r.chave}`}>{r.chave.toUpperCase()}</span>
                 <span className="cresce">
-                  {r.dia.disciplina}
-                  <small>{numeroDia(r.dia)} · revisada em {fmtData(r.feitaEm)}</small>
+                  <b>{r.dia.disciplina}</b>
+                  <small>{numeroDia(r.dia)} · {fmtData(r.feitaEm)}</small>
                 </span>
                 <button className="icone-btn" aria-label="Desfazer revisão" title="Desfazer" onClick={() => marcarRevisao(r.dia.id, r.chave, false)}>
                   <Undo2 size={15} />
@@ -246,8 +255,13 @@ export default function Revisoes() {
               </li>
             ))}
           </ol>
-        </section>
-      </div>
+        )}
+        {feitas.length > 12 && (
+          <button className="rv-mais rv-mais-solto" onClick={() => setHistAberto((v) => !v)}>
+            {histAberto ? 'Mostrar menos' : `Ver todas (${feitas.length})`}
+          </button>
+        )}
+      </section>
     </>
   )
 }

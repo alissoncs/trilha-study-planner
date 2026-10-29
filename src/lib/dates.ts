@@ -24,3 +24,6 @@ export const fmtDiaSemana = (iso: string) =>
 
 export const fmtMin = (min: number) =>
   `${String(Math.floor(min / 60)).padStart(2, '0')}h${String(min % 60).padStart(2, '0')}m`
+
+// Duração compacta no formato h:mm (ex.: 3:16).
+export const fmtHoras = (min: number) => `${Math.floor(min / 60)}:${String(min % 60).padStart(2, '0')}`
