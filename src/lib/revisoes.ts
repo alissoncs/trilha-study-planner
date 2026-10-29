@@ -25,3 +25,12 @@ export const revisoesPendentes = (dias: DiaEstudo[], intervalos: Estado['interva
 const PESO: Record<string, number> = { Altíssima: 3, Alta: 2, Média: 1, Especial: 0 }
 export const prioridade = (d: DiaEstudo, atrasoDias: number) =>
   (PESO[d.relevancia] ?? 0) * 10 + Math.min(atrasoDias, 30)
+
+export const revisoesFeitas = (dias: DiaEstudo[]) =>
+  dias
+    .flatMap((d) => REV_KEYS.filter((k) => d.revisoes[k]).map((chave) => ({ dia: d, chave, feitaEm: d.revisoes[chave]! })))
+    .sort((a, b) => b.feitaEm.localeCompare(a.feitaEm))
+
+// Marcado à mão ou com % de acertos abaixo do limite.
+export const precisaRevisar = (d: DiaEstudo, limite: number) =>
+  d.status === 'Concluído' && (!!d.revisar || (d.acertos !== null && d.acertos < limite))

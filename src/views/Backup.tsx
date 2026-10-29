@@ -1,11 +1,15 @@
 import { useRef, useState } from 'react'
+import { Download, RotateCcw, Upload } from 'lucide-react'
 import type { Store } from '../store'
-import type { Estado } from '../types'
+import { normalizar } from '../lib/storage'
+import { Confirm } from '../ui/Modal'
+import { useToast } from '../ui/Toast'
 
 export default function Backup({ store }: { store: Store }) {
   const { estado, configurar, importar, resetar } = store
+  const toast = useToast()
   const arquivo = useRef<HTMLInputElement>(null)
-  const [msg, setMsg] = useState('')
+  const [confirmar, setConfirmar] = useState(false)
 
   const exportar = () => {
     const url = URL.createObjectURL(new Blob([JSON.stringify(estado, null, 2)], { type: 'application/json' }))
@@ -14,49 +18,79 @@ export default function Backup({ store }: { store: Store }) {
     a.download = `trilha-backup-${new Date().toISOString().slice(0, 10)}.json`
     a.click()
     URL.revokeObjectURL(url)
+    toast('Backup exportado')
   }
 
   const ler = async (f: File) => {
     try {
-      const e = JSON.parse(await f.text()) as Estado
-      if (e.version !== 1 || !Array.isArray(e.dias)) throw new Error()
+      const e = normalizar(JSON.parse(await f.text()))
+      if (!e) throw new Error()
       importar(e)
-      setMsg('Backup importado.')
+      toast('Backup importado')
     } catch {
-      setMsg('Arquivo inválido.')
+      toast('Arquivo inválido')
     }
   }
 
   return (
-    <section className="config">
-      <h2>Backup</h2>
-      <p>Seus dados ficam só neste navegador. Exporte um backup de vez em quando — limpar os dados do site apaga tudo.</p>
-      <div className="acoes">
-        <button onClick={exportar}>Exportar JSON</button>
-        <button onClick={() => arquivo.current?.click()}>Importar JSON</button>
-        <input ref={arquivo} type="file" accept="application/json" hidden onChange={(e) => e.target.files?.[0] && ler(e.target.files[0])} />
-        <button className="perigo" onClick={() => confirm('Apagar seu progresso e voltar ao cronograma original?') && resetar()}>
-          Restaurar cronograma original
-        </button>
-      </div>
-      {msg && <p>{msg}</p>}
+    <>
+      <section className="card">
+        <h3 className="secao serif">Backup</h3>
+        <p className="texto-modal">Seus dados ficam só neste navegador. Exporte um backup de vez em quando: limpar os dados do site apaga tudo.</p>
+        <div className="acoes">
+          <button className="btn btn-primario" onClick={exportar}>
+            <Download size={16} /> Exportar JSON
+          </button>
+          <button className="btn" onClick={() => arquivo.current?.click()}>
+            <Upload size={16} /> Importar JSON
+          </button>
+          <input ref={arquivo} type="file" accept="application/json" hidden onChange={(e) => e.target.files?.[0] && ler(e.target.files[0])} />
+          <button className="btn btn-perigo-suave" onClick={() => setConfirmar(true)}>
+            <RotateCcw size={16} /> Restaurar cronograma original
+          </button>
+        </div>
+      </section>
 
-      <h2>Configurações</h2>
-      <label className="campo">
-        Data da prova
-        <input type="date" value={estado.dataProva} onChange={(e) => configurar({ dataProva: e.target.value })} />
-      </label>
-      {(['r7', 'r14', 'r30'] as const).map((k) => (
-        <label key={k} className="campo">
-          Intervalo da revisão {k.toUpperCase()} (dias)
-          <input
-            type="number"
-            min={1}
-            value={estado.intervalos[k]}
-            onChange={(e) => configurar({ intervalos: { ...estado.intervalos, [k]: Math.max(1, Number(e.target.value)) } })}
-          />
-        </label>
-      ))}
-    </section>
+      <section className="card">
+        <h3 className="secao serif">Configurações</h3>
+        <div className="grade-campos">
+          <label className="campo">
+            <span className="rotulo">Data da prova</span>
+            <input className="input" type="date" value={estado.dataProva} onChange={(e) => configurar({ dataProva: e.target.value })} />
+          </label>
+          <label className="campo">
+            <span className="rotulo">Revisar se acertos &lt; (%)</span>
+            <input className="input" type="number" min={0} max={100} value={estado.limiteAcertos} onChange={(e) => configurar({ limiteAcertos: Number(e.target.value) })} />
+          </label>
+          {(['r7', 'r14', 'r30'] as const).map((k) => (
+            <label key={k} className="campo">
+              <span className="rotulo">Revisão {k.toUpperCase()} (dias)</span>
+              <input
+                className="input"
+                type="number"
+                min={1}
+                value={estado.intervalos[k]}
+                onChange={(e) => configurar({ intervalos: { ...estado.intervalos, [k]: Math.max(1, Number(e.target.value)) } })}
+              />
+            </label>
+          ))}
+        </div>
+      </section>
+
+      {confirmar && (
+        <Confirm
+          perigo
+          titulo="Restaurar cronograma original?"
+          mensagem="Todo o seu progresso, anotações, revisões e marcações serão apagados e o cronograma volta ao estado inicial. Essa ação não pode ser desfeita."
+          confirmar="Apagar e restaurar"
+          onCancel={() => setConfirmar(false)}
+          onConfirm={() => {
+            resetar()
+            setConfirmar(false)
+            toast('Cronograma restaurado')
+          }}
+        />
+      )}
+    </>
   )
 }

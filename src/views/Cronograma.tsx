@@ -1,15 +1,23 @@
-import { Fragment, useState } from 'react'
+import { useState } from 'react'
+import { Flag, Search } from 'lucide-react'
 import type { Store } from '../store'
 import type { Relevancia, Status } from '../types'
 import { fmtData, fmtDiaSemana, fmtMin, hojeISO } from '../lib/dates'
 import { GRUPOS, grupoDe } from '../lib/grupos'
 import { revisoesDe } from '../lib/revisoes'
-import { Chip, STATUS, StatusSelect } from './DiaCard'
+import { Select } from '../ui/Select'
+import type { Opt } from '../ui/Select'
+import { Chip, Dot, STATUS, StatusSelect, numeroDia } from './DiaCard'
+import { DiaModal } from './DiaModal'
 
 const RELEVANCIAS: Relevancia[] = ['Altíssima', 'Alta', 'Média', 'Especial']
+const opts = <T extends string>(todos: string, lista: readonly T[]): Opt<T | ''>[] => [
+  { value: '', label: todos },
+  ...lista.map((v) => ({ value: v, label: v })),
+]
 
 export default function Cronograma({ store }: { store: Store }) {
-  const { estado, atualizarDia } = store
+  const { estado, atualizarDia, marcarRevisao } = store
   const [grupo, setGrupo] = useState('')
   const [status, setStatus] = useState<Status | ''>('')
   const [relev, setRelev] = useState<Relevancia | ''>('')
@@ -28,25 +36,13 @@ export default function Cronograma({ store }: { store: Store }) {
   return (
     <>
       <div className="filtros">
-        <input placeholder="Buscar…" value={busca} onChange={(e) => setBusca(e.target.value)} />
-        <select value={grupo} onChange={(e) => setGrupo(e.target.value)}>
-          <option value="">Todas as matérias</option>
-          {GRUPOS.map((g) => (
-            <option key={g}>{g}</option>
-          ))}
-        </select>
-        <select value={status} onChange={(e) => setStatus(e.target.value as Status | '')}>
-          <option value="">Todos os status</option>
-          {STATUS.map((s) => (
-            <option key={s}>{s}</option>
-          ))}
-        </select>
-        <select value={relev} onChange={(e) => setRelev(e.target.value as Relevancia | '')}>
-          <option value="">Toda relevância</option>
-          {RELEVANCIAS.map((r) => (
-            <option key={r}>{r}</option>
-          ))}
-        </select>
+        <div className="busca">
+          <Search size={16} />
+          <input placeholder="Buscar no cronograma…" value={busca} onChange={(e) => setBusca(e.target.value)} />
+        </div>
+        <Select value={grupo} options={opts('Todas as matérias', GRUPOS)} onChange={setGrupo} label="Matéria" />
+        <Select value={status} options={opts('Todos os status', STATUS)} onChange={setStatus} label="Status" />
+        <Select value={relev} options={opts('Toda relevância', RELEVANCIAS)} onChange={setRelev} label="Relevância" />
         <span className="contagem-filtro">{dias.length} dias</span>
       </div>
 
@@ -62,75 +58,60 @@ export default function Cronograma({ store }: { store: Store }) {
               <th>Relevância</th>
               <th>Status</th>
               <th>Revisões</th>
-              <th>% acertos</th>
             </tr>
           </thead>
           <tbody>
             {dias.map((d) => {
-              const revs = revisoesDe(d, estado.intervalos)
               const atrasado = d.data < hoje && d.status !== 'Concluído'
               return (
-                <Fragment key={d.id}>
-                  <tr
-                    className={`${atrasado ? 'atrasado' : ''} ${d.data === hoje ? 'hoje' : ''} rel-${d.relevancia}`}
-                  >
-                    <td>{d.id.replace('dia-', '')}</td>
-                    <td className="nowrap">
-                      {fmtDiaSemana(d.data)} {fmtData(d.data)}
-                    </td>
-                    <td>{d.disciplina}</td>
-                    <td className="conteudo" onClick={() => setAberto(aberto === d.id ? null : d.id)}>
-                      {d.conteudo}
-                    </td>
-                    <td className="nowrap">{fmtMin(d.minPdf + d.minVideo)}</td>
-                    <td>
-                      <Chip r={d.relevancia} />
-                    </td>
-                    <td>
-                      <StatusSelect dia={d} onChange={(s) => atualizarDia(d.id, { status: s })} />
-                    </td>
-                    <td className="nowrap">
-                      {revs.length === 0 && '—'}
-                      {revs.map((r) => (
-                        <label key={r.chave} className={`rev ${!d.revisoes[r.chave] && r.vence <= hoje ? 'vencida' : ''}`} title={`vence ${fmtData(r.vence)}`}>
-                          <input
-                            type="checkbox"
-                            checked={d.revisoes[r.chave]}
-                            onChange={(e) => atualizarDia(d.id, { revisoes: { ...d.revisoes, [r.chave]: e.target.checked } })}
-                          />
-                          {r.chave.toUpperCase()}
-                        </label>
-                      ))}
-                    </td>
-                    <td>
-                      <input
-                        className="num"
-                        type="number"
-                        min={0}
-                        max={100}
-                        value={d.acertos ?? ''}
-                        onChange={(e) => atualizarDia(d.id, { acertos: e.target.value === '' ? null : Number(e.target.value) })}
-                      />
-                    </td>
-                  </tr>
-                  {aberto === d.id && (
-                    <tr className="notas">
-                      <td colSpan={9}>
-                        <textarea
-                          placeholder="Anotações do dia…"
-                          value={d.anotacoes}
-                          onChange={(e) => atualizarDia(d.id, { anotacoes: e.target.value })}
-                        />
-                      </td>
-                    </tr>
-                  )}
-                </Fragment>
+                <tr key={d.id} className={`${atrasado ? 'atrasado' : ''} ${d.data === hoje ? 'hoje' : ''}`} onClick={() => setAberto(d.id)}>
+                  <td className="nowrap">
+                    <button
+                      className={`flag ${d.revisar ? 'on' : ''}`}
+                      title="Precisa revisar"
+                      aria-label="Precisa revisar"
+                      onClick={(e) => (e.stopPropagation(), atualizarDia(d.id, { revisar: !d.revisar }))}
+                    >
+                      <Flag size={14} />
+                    </button>
+                    {numeroDia(d).replace('Dia ', '')}
+                  </td>
+                  <td className="nowrap data-col">
+                    {fmtDiaSemana(d.data)}, {fmtData(d.data)}
+                  </td>
+                  <td>
+                    <Dot disciplina={d.disciplina} />
+                    {d.disciplina}
+                  </td>
+                  <td className="conteudo">{d.conteudo}</td>
+                  <td className="nowrap">{fmtMin(d.minPdf + d.minVideo)}</td>
+                  <td>
+                    <Chip r={d.relevancia} />
+                  </td>
+                  <td onClick={(e) => e.stopPropagation()}>
+                    <StatusSelect dia={d} onChange={(s) => atualizarDia(d.id, { status: s })} />
+                  </td>
+                  <td className="nowrap" onClick={(e) => e.stopPropagation()}>
+                    {d.status !== 'Concluído' && <span className="mut">—</span>}
+                    {revisoesDe(d, estado.intervalos).map((r) => (
+                      <button
+                        key={r.chave}
+                        title={d.revisoes[r.chave] ? `feita em ${fmtData(d.revisoes[r.chave]!)}` : `vence ${fmtData(r.vence)}`}
+                        className={`rev-mini ${d.revisoes[r.chave] ? 'feita' : r.vence <= hoje ? 'vencida' : ''}`}
+                        onClick={() => marcarRevisao(d.id, r.chave, !d.revisoes[r.chave])}
+                      >
+                        {r.chave.toUpperCase()}
+                      </button>
+                    ))}
+                  </td>
+                </tr>
               )
             })}
           </tbody>
         </table>
       </div>
-      <p className="dica">Clique no conteúdo para abrir as anotações. As revisões aparecem quando o dia é concluído.</p>
+      <p className="dica">Clique em uma linha para abrir os detalhes, anotações e % de acertos.</p>
+      {aberto && <DiaModal id={aberto} store={store} onClose={() => setAberto(null)} />}
     </>
   )
 }

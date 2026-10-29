@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import type { DiaEstudo, Estado } from './types'
+import type { DiaEstudo, Estado, RevKey } from './types'
 import { carregar, estadoInicial, salvar } from './lib/storage'
 import { addDias, diffDias, hojeISO } from './lib/dates'
 
@@ -16,12 +16,24 @@ export function useStore() {
         if (patch.status === 'Concluído' && !novo.concluidoEm) novo.concluidoEm = hojeISO()
         if (patch.status && patch.status !== 'Concluído') {
           novo.concluidoEm = undefined
-          novo.revisoes = { r7: false, r14: false, r30: false }
+          novo.revisoes = { r7: null, r14: null, r30: null }
+          novo.revisar = false
         }
         return novo
       }),
     }))
   }, [])
+
+  const marcarRevisao = useCallback(
+    (id: string, chave: RevKey, feito: boolean) =>
+      setEstado((e) => ({
+        ...e,
+        dias: e.dias.map((d) =>
+          d.id === id ? { ...d, revisoes: { ...d.revisoes, [chave]: feito ? hojeISO() : null } } : d,
+        ),
+      })),
+    [],
+  )
 
   // Empurra os dias não concluídos e atrasados para frente, sem mexer no dia da prova.
   const reagendarAtrasados = useCallback(() => {
@@ -40,6 +52,6 @@ export function useStore() {
   const importar = useCallback((e: Estado) => setEstado(e), [])
   const resetar = useCallback(() => setEstado(estadoInicial()), [])
 
-  return { estado, atualizarDia, reagendarAtrasados, configurar, importar, resetar }
+  return { estado, atualizarDia, marcarRevisao, reagendarAtrasados, configurar, importar, resetar }
 }
 export type Store = ReturnType<typeof useStore>

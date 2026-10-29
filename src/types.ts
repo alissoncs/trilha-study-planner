@@ -13,7 +13,8 @@ export interface DiaEstudo {
   relevancia: Relevancia
   status: Status
   concluidoEm?: string // ISO
-  revisoes: Record<RevKey, boolean>
+  revisoes: Record<RevKey, string | null> // data (ISO) em que foi revisado
+  revisar?: boolean // marcado manualmente como "precisa revisar"
   anotacoes: string
   acertos: number | null // % de acertos nas questões
 }
@@ -31,10 +32,12 @@ export interface Edital {
 export type Cargo = 'tecnico' | 'analista'
 
 export interface Estado {
-  version: 1
+  version: 2
   dias: DiaEstudo[]
   dataProva: string
   intervalos: Record<RevKey, number>
   cargo: Cargo
   topicosFeitos: Record<string, boolean>
+  topicosRevisar: Record<string, boolean>
+  limiteAcertos: number // abaixo disso o dia entra em "precisa revisar"
 }

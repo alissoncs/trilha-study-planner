@@ -25,3 +25,16 @@ export function grupoDe(disciplina: string): Grupo {
   if (/gest|afo|[ée]tica|legisla/.test(d)) return 'Gestão e Legislação'
   return 'Revisão e Questões'
 }
+
+// Cor de cada matéria (barras e marcadores).
+export const GRUPO_COR: Record<Grupo, string> = {
+  'Língua Portuguesa': '#e07a5f',
+  'Raciocínio Lógico': '#3d85c6',
+  'Direito Constitucional': '#7c6bc4',
+  'Direito Administrativo': '#2a9d8f',
+  'Direito do Trabalho': '#d99a2b',
+  'Processo do Trabalho': '#c4577a',
+  'Gestão e Legislação': '#6a994e',
+  'Revisão e Questões': '#8a8f9c',
+  'Prova e Descanso': '#b8a99a',
+}

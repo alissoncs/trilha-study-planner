@@ -14,6 +14,12 @@ App web interativo para organizar e priorizar os estudos de concurso. **Trilha**
 - Dois cargos, com editais verticalizados: **Analista Judiciário** e **Técnico Administrativo**. O app precisa permitir escolher o cargo, e cada um tem seu próprio conteúdo programático.
 - Todos os arquivos de referência estão em `docs/`.
 
+## O concurso (confirmado por notícias, conferir no edital)
+- **TRT-4 (RS), Edital nº 1/2026**, publicado no DOU em 22/10/2026, cadastro de reserva. **Banca: FCC.**
+- **Provas em 31/01/2027**, em Porto Alegre (Técnico de manhã, Analista à tarde). Inscrições de 26/10 a 25/11/2026.
+- Os dados ficam em `src/lib/concurso.ts`, junto com os links de busca de provas anteriores (aba "Provas anteriores").
+- O cronograma de 90 dias do xlsx termina em 27/12/2026, antes da prova. As datas ainda não foram redistribuídas até 31/01/2027.
+
 ## Arquivos em `docs/`
 | Arquivo | O que é | Papel no app |
 |---|---|---|

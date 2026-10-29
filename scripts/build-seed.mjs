@@ -20,7 +20,7 @@ const dias = rows.map((r) => ({
   status: r.Status,
   anotacoes: '',
   acertos: null,
-  revisoes: { r7: false, r14: false, r30: false },
+  revisoes: { r7: null, r14: null, r30: null },
 }))
 writeFileSync('src/data/seed.json', JSON.stringify(dias, null, 1))
 console.log(dias.length, 'dias')
