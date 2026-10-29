@@ -2713,7 +2713,8 @@
   "bloco": "Bloco 03 - Estatuto da Pessoa com Deficiência",
   "professor": "Rafael Ravazolo",
   "dataOriginal": "03/02/2026",
-  "duracaoMin": 24
+  "duracaoMin": 24,
+  "possivelDuplicata": true
  },
  {
   "pagina": 19,

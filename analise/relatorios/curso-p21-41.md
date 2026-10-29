@@ -26,7 +26,7 @@ Leitura e Banco de Questões não trazem disciplina na linha: foram atribuídos 
 
 ## Ordem de aparição das disciplinas
 
-Blocos contínuos (alterna bastante entre disciplinas):
+Trocas de disciplina (Exibição):
 
 1. Administração Pública (a partir de 09/02/2026, item 1)
 2. Direito do Trabalho (a partir de 10/02/2026, item 6)
@@ -44,9 +44,9 @@ Blocos contínuos (alterna bastante entre disciplinas):
 
 Primeira aparição: Administração Pública -> Direito do Trabalho -> Direito Constitucional -> Administração Financeira e Orçamentária -> Direito Processual do Trabalho
 
-Fases grosso modo: (a) 09/02-13/02 Administração Pública (aulas 3-7) intercalada com Direito do Trabalho (aulas 1-5); (b) 16/02-20/02 Administração Pública pesada (aulas 8-11); (c) 23-26/02 Direito Constitucional (Poderes) + Direito do Trabalho; (d) março: Direito do Trabalho (aulas 6-18) e Administração Pública (aulas 12-15, 6-9) e Orçamento; (e) 23/03-04/04 Direito Processual do Trabalho quase exclusivo (aulas 1-22), com Administração Pública residual até 23/03.
+Fases (por data original): 09-13/02 Adm. Pública (aulas 3-7), com Direito do Trabalho (aulas 1-5) em 10-11/02; 16-20/02 só Adm. Pública (aulas 8-11); 23-26/02 Direito Constitucional (Poderes Executivo, Legislativo, Judiciário); 27/02 Direito do Trabalho; 02-05/03 Adm. Pública (aulas 12-15: Contratos e Ética); 06-12/03 só Direito do Trabalho (aulas 8-18); 13-20/03 Orçamento (AFO) + Adm. Pública (aulas 6-9 de Rafael Ravazolo); 23/03-03/04 Direito Processual do Trabalho (aulas 1-22), com Adm. Pública residual em 23/03. As disciplinas vão em blocos de dias, misturando só nas transições.
 
-## Professores por disciplina (horas de Exibição+Leitura/Banco não contam)
+## Professores por disciplina (horas de Exibição)
 
 - **Administração Pública**: Rafael Ravazolo (23h07 (1387 min)); Patrick Meneghetti (2h44 (164 min)); Roberto Baldacci (1h40 (100 min)); Ariel Rocha Zvoziak (0h59 (59 min)); Vinícius Filipin (0h56 (56 min))
 - **Direito do Trabalho**: Luiz Henrique Menegon Dutra (7h01 (421 min)); Ariel Rocha Zvoziak (5h57 (357 min))
@@ -59,13 +59,13 @@ Obs.: Ariel Rocha Zvoziak leciona Aula 03 'Princípios básicos da Administraç�
 ## Padrões
 
 - **Dias distintos no trecho**: 48 (de 09/02/2026 a 04/04/2026). Sem domingos; segunda a sexta têm aulas + Leitura do Material, sábado é só Banco de Questões (exceto 14/02, que tem Banco + 1 aula de 1h20).
-- **Estrutura do dia útil**: sequência de blocos de Exibição (15-45 min cada, tipicamente 4 a 7 blocos) de uma ou mais aulas, intercalada com 1 item 'Leitura do Material' de 01h (em geral 1 por dia, às vezes 2 em dias com muito conteúdo). A Leitura vem tipicamente após fechar uma aula; exemplos de dia: 'EEEEL' (4 blocos + leitura), 'EELEE' (leitura no meio).
-- **Leitura do Material**: 40 itens x 1h = 40h; dias com 0 leituras: 8, com 1: 40, com 2+: 0.
+- **Estrutura do dia útil**: sequência de blocos de Exibição (15-45 min cada, tipicamente 4 a 7 blocos) de uma ou mais aulas, intercalada com 1 item 'Leitura do Material' de 01h (em geral 1 por dia). A Leitura vem tipicamente após fechar uma aula; exemplos de dia: 'EEEEL' (4 blocos + leitura), 'EELEE' (leitura no meio).
+- **Leitura do Material**: 40 itens x 1h = 40h; dias úteis com 1 leitura: 40; sem leitura: 8 (os 8 sábados de Banco); nunca 2 no mesmo dia.
 - **Banco de Questões**: 8 ocorrências x 02h = 16h, sempre aos sábados, em: 14/02/2026, 21/02/2026, 28/02/2026, 07/03/2026, 14/03/2026, 21/03/2026, 28/03/2026, 04/04/2026. Ocorre 1x por semana (sem mudança de disciplina indicada: banco geral da semana).
 - **Mentorias, aulas gravadas, revisões e simulados**: não há nenhum item desses tipos nas páginas 21-41 (todas as linhas são Exibição, Leitura ou Banco). Revisões só aparecem implicitamente como 'Banco de Questões' semanal. Não há simulado.
-- **Carga diária de Exibição**: mín 0 min, máx 196 min, média 84 min por dia (todos os dias, incl. sábados).
+- **Carga diária de Exibição**: mín 26 min, máx 196 min, média 101 min por dia (dias com aula).
 - Aulas muito longas são divididas em 'Bloco 01..NN' (ex.: Recursos em Espécie com 11 blocos; Gestão por Projetos com 8); aulas curtas são 'Bloco único'.
-- Disciplinas se intercalam dentro do mesmo dia (ex.: 09/02 mistura Adm. Pública e Direito do Trabalho), numeração de aulas por disciplina é sequencial mas as disciplinas avançam em paralelo.
+- Disciplinas vêm em blocos de dias consecutivos, com mistura apenas nas transições (ex.: 10/02 e 13/03, 23/03); a numeração das aulas é sequencial dentro de cada disciplina.
 
 ## Data final do cronograma
 
