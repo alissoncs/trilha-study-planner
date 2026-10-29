@@ -1,12 +1,12 @@
 import { Flag } from 'lucide-react'
-import type { Store } from '../store'
+import { useEstudos } from '../StoreContext'
 import { fmtData, fmtMin, hojeISO } from '../lib/dates'
 import { revisoesDe } from '../lib/revisoes'
 import { Modal } from '../ui/Modal'
 import { Chip, StatusSelect, numeroDia } from './DiaCard'
 
-export function DiaModal({ id, store, onClose }: { id: string; store: Store; onClose: () => void }) {
-  const { estado, atualizarDia, marcarRevisao } = store
+export function DiaModal({ id, onClose }: { id: string; onClose: () => void }) {
+  const { estado, atualizarDia, marcarRevisao } = useEstudos()
   const dia = estado.dias.find((d) => d.id === id)
   if (!dia) return null
   const revs = revisoesDe(dia, estado.intervalos)

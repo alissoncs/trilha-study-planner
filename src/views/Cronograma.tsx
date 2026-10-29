@@ -1,14 +1,14 @@
-import { useState } from 'react'
-import { Flag, Search } from 'lucide-react'
-import type { Store } from '../store'
-import type { Relevancia, Status } from '../types'
+import { useMemo, useState } from 'react'
+import { ArrowDown, ArrowUp, ChevronsUpDown, Flag, Search } from 'lucide-react'
+import { useEstudos } from '../StoreContext'
+import { useDiaAberto } from '../useDiaAberto'
+import type { DiaEstudo, Relevancia, Status } from '../types'
 import { fmtData, fmtDiaSemana, fmtMin, hojeISO } from '../lib/dates'
 import { GRUPOS, grupoDe } from '../lib/grupos'
 import { revisoesDe } from '../lib/revisoes'
 import { Select } from '../ui/Select'
 import type { Opt } from '../ui/Select'
 import { Chip, Dot, STATUS, StatusSelect, numeroDia } from './DiaCard'
-import { DiaModal } from './DiaModal'
 
 const RELEVANCIAS: Relevancia[] = ['Altíssima', 'Alta', 'Média', 'Especial']
 const opts = <T extends string>(todos: string, lista: readonly T[]): Opt<T | ''>[] => [
@@ -16,22 +16,62 @@ const opts = <T extends string>(todos: string, lista: readonly T[]): Opt<T | ''>
   ...lista.map((v) => ({ value: v, label: v })),
 ]
 
-export default function Cronograma({ store }: { store: Store }) {
-  const { estado, atualizarDia, marcarRevisao } = store
+type Chave = 'n' | 'data' | 'disciplina' | 'conteudo' | 'tempo' | 'relevancia' | 'status'
+const COLUNAS: { chave: Chave | null; titulo: string }[] = [
+  { chave: 'n', titulo: 'Dia' },
+  { chave: 'data', titulo: 'Data' },
+  { chave: 'disciplina', titulo: 'Disciplina' },
+  { chave: 'conteudo', titulo: 'Conteúdo' },
+  { chave: 'tempo', titulo: 'Tempo' },
+  { chave: 'relevancia', titulo: 'Relevância' },
+  { chave: 'status', titulo: 'Status' },
+  { chave: null, titulo: 'Revisões' },
+]
+const ORDEM_STATUS: Record<Status, number> = { Pendente: 0, 'Em Andamento': 1, Concluído: 2 }
+const valorDe = (d: DiaEstudo, c: Chave): string | number => {
+  switch (c) {
+    case 'n': return d.n
+    case 'data': return d.data
+    case 'disciplina': return d.disciplina
+    case 'conteudo': return d.conteudo
+    case 'tempo': return d.minPdf + d.minVideo
+    case 'relevancia': return RELEVANCIAS.indexOf(d.relevancia)
+    case 'status': return ORDEM_STATUS[d.status]
+  }
+}
+
+export default function Cronograma() {
+  const { estado, atualizarDia, marcarRevisao } = useEstudos()
   const [grupo, setGrupo] = useState('')
   const [status, setStatus] = useState<Status | ''>('')
   const [relev, setRelev] = useState<Relevancia | ''>('')
   const [busca, setBusca] = useState('')
-  const [aberto, setAberto] = useState<string | null>(null)
+  const { abrir } = useDiaAberto()
+  const [ordem, setOrdem] = useState<{ chave: Chave; asc: boolean }>({ chave: 'n', asc: true })
   const hoje = hojeISO()
 
-  const dias = estado.dias.filter(
-    (d) =>
-      (!grupo || grupoDe(d.disciplina) === grupo) &&
-      (!status || d.status === status) &&
-      (!relev || d.relevancia === relev) &&
-      (!busca || `${d.disciplina} ${d.conteudo}`.toLowerCase().includes(busca.toLowerCase())),
-  )
+  const ordenar = (chave: Chave) =>
+    setOrdem((o) => (o.chave === chave ? { chave, asc: !o.asc } : { chave, asc: true }))
+
+  const dias = useMemo(() => {
+    const termo = busca.toLowerCase()
+    const filtrados = estado.dias.filter(
+      (d) =>
+        (!grupo || grupoDe(d.disciplina) === grupo) &&
+        (!status || d.status === status) &&
+        (!relev || d.relevancia === relev) &&
+        (!termo || `${d.disciplina} ${d.conteudo}`.toLowerCase().includes(termo)),
+    )
+    return filtrados.sort((a, b) => {
+      const x = valorDe(a, ordem.chave)
+      const y = valorDe(b, ordem.chave)
+      const c = typeof x === 'number' && typeof y === 'number' ? x - y : String(x).localeCompare(String(y), 'pt-BR')
+      return (ordem.asc ? c : -c) || a.n - b.n
+    })
+  }, [estado.dias, grupo, status, relev, busca, ordem])
+
+  return (ordem.asc ? c : -c) || a.n - b.n
+  })
 
   return (
     <>
@@ -50,21 +90,31 @@ export default function Cronograma({ store }: { store: Store }) {
         <table>
           <thead>
             <tr>
-              <th>Dia</th>
-              <th>Data</th>
-              <th>Disciplina</th>
-              <th>Conteúdo</th>
-              <th>Tempo</th>
-              <th>Relevância</th>
-              <th>Status</th>
-              <th>Revisões</th>
+              {COLUNAS.map(({ chave, titulo }) =>
+                chave ? (
+                  <th key={chave} aria-sort={ordem.chave === chave ? (ordem.asc ? 'ascending' : 'descending') : 'none'}>
+                    <button className={`th-sort ${ordem.chave === chave ? 'ativa' : ''}`} onClick={() => ordenar(chave)}>
+                      {titulo}
+                      {ordem.chave !== chave ? <ChevronsUpDown size={12} /> : ordem.asc ? <ArrowUp size={12} /> : <ArrowDown size={12} />}
+                    </button>
+                  </th>
+                ) : (
+                  <th key={titulo}>{titulo}</th>
+                ),
+              )}
             </tr>
           </thead>
           <tbody>
             {dias.map((d) => {
               const atrasado = d.data < hoje && d.status !== 'Concluído'
               return (
-                <tr key={d.id} className={`${atrasado ? 'atrasado' : ''} ${d.data === hoje ? 'hoje' : ''}`} onClick={() => setAberto(d.id)}>
+                <tr
+                  key={d.id}
+                  className={`${atrasado ? 'atrasado' : ''} ${d.data === hoje ? 'hoje' : ''}`}
+                  tabIndex={0}
+                  onClick={() => abrir(d.id)}
+                  onKeyDown={(e) => e.target === e.currentTarget && e.key === 'Enter' && abrir(d.id)}
+                >
                   <td className="nowrap">
                     <button
                       className={`flag ${d.revisar ? 'on' : ''}`}
@@ -111,7 +161,6 @@ export default function Cronograma({ store }: { store: Store }) {
         </table>
       </div>
       <p className="dica">Clique em uma linha para abrir os detalhes, anotações e % de acertos.</p>
-      {aberto && <DiaModal id={aberto} store={store} onClose={() => setAberto(null)} />}
     </>
   )
 }

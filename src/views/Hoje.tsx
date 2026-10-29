@@ -1,18 +1,19 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { AlertCircle, CalendarClock, CheckCheck, RefreshCw, Timer } from 'lucide-react'
-import type { Store } from '../store'
+import { useEstudos } from '../StoreContext'
+import { useDiaAberto } from '../useDiaAberto'
 import { diffDias, fmtData, fmtMin, hojeISO } from '../lib/dates'
 import { prioridade, revisoesPendentes } from '../lib/revisoes'
 import { Confirm } from '../ui/Modal'
 import { useToast } from '../ui/Toast'
 import { DiaCard, numeroDia } from './DiaCard'
-import { DiaModal } from './DiaModal'
 import { Stat } from './Stat'
 
-export default function Hoje({ store }: { store: Store }) {
-  const { estado, atualizarDia, marcarRevisao, reagendarAtrasados } = store
+export default function Hoje() {
+  const { estado, atualizarDia, marcarRevisao, reagendarAtrasados } = useEstudos()
   const toast = useToast()
-  const [aberto, setAberto] = useState<string | null>(null)
+  const { abrir } = useDiaAberto()
   const [confirmar, setConfirmar] = useState(false)
   const hoje = hojeISO()
   const doDia = estado.dias.filter((d) => d.data === hoje)
@@ -37,7 +38,7 @@ export default function Hoje({ store }: { store: Store }) {
         <h3 className="secao serif">Estudo de hoje · {fmtData(hoje)}</h3>
         {doDia.length ? (
           doDia.map((d) => (
-            <DiaCard key={d.id} dia={d} onAbrir={() => setAberto(d.id)} onStatus={(status) => atualizarDia(d.id, { status })} />
+            <DiaCard key={d.id} dia={d} onAbrir={() => abrir(d.id)} onStatus={(status) => atualizarDia(d.id, { status })} />
           ))
         ) : (
           <div className="vazio">
@@ -81,14 +82,13 @@ export default function Hoje({ store }: { store: Store }) {
             key={d.id}
             dia={d}
             extra={`${atraso}d de atraso`}
-            onAbrir={() => setAberto(d.id)}
+            onAbrir={() => abrir(d.id)}
             onStatus={(status) => atualizarDia(d.id, { status })}
           />
         ))}
-        {atrasados.length > 8 && <p className="dica">+ {atrasados.length - 8} atrasados na aba Cronograma.</p>}
+        {atrasados.length > 8 && <p className="dica">+ {atrasados.length - 8} atrasados na aba <Link to="/cronograma">Cronograma</Link>.</p>}
       </section>
 
-      {aberto && <DiaModal id={aberto} store={store} onClose={() => setAberto(null)} />}
       {confirmar && (
         <Confirm
           titulo="Reagendar dias atrasados?"

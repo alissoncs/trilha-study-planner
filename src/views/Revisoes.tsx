@@ -1,16 +1,15 @@
-import { useState } from 'react'
 import { CheckCheck, Flag, RotateCcw } from 'lucide-react'
-import type { Store } from '../store'
+import { useEstudos } from '../StoreContext'
+import { useDiaAberto } from '../useDiaAberto'
 import { diffDias, fmtData, hojeISO } from '../lib/dates'
 import { precisaRevisar, revisoesFeitas, revisoesPendentes } from '../lib/revisoes'
 import { useToast } from '../ui/Toast'
 import { numeroDia } from './DiaCard'
-import { DiaModal } from './DiaModal'
 
-export default function Revisoes({ store }: { store: Store }) {
-  const { estado, atualizarDia, marcarRevisao } = store
+export default function Revisoes() {
+  const { estado, atualizarDia, marcarRevisao } = useEstudos()
   const toast = useToast()
-  const [aberto, setAberto] = useState<string | null>(null)
+  const { abrir } = useDiaAberto()
   const hoje = hojeISO()
   const pend = revisoesPendentes(estado.dias, estado.intervalos)
   const vencidas = pend.filter((r) => r.vence < hoje)
@@ -57,13 +56,13 @@ export default function Revisoes({ store }: { store: Store }) {
         {marcados.map((d) => (
           <div key={d.id} className="linha">
             <Flag size={16} className="flag-on" />
-            <span className="cresce clicavel" onClick={() => setAberto(d.id)}>
+            <button className="cresce clicavel link-btn" onClick={() => abrir(d.id)}>
               <strong>{d.disciplina}</strong>
               <small>
                 {numeroDia(d)}
                 {d.acertos !== null && ` · ${d.acertos}% de acertos`}
               </small>
-            </span>
+            </button>
             <button
               className="btn"
               onClick={() => {
@@ -91,7 +90,6 @@ export default function Revisoes({ store }: { store: Store }) {
           </div>
         ))}
       </section>
-      {aberto && <DiaModal id={aberto} store={store} onClose={() => setAberto(null)} />}
     </>
   )
 }
