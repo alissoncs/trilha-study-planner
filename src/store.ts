@@ -1,12 +1,9 @@
 import { useCallback, useEffect, useState } from 'react'
 import type { DiaEstudo, Estado, RevKey } from './types'
 import { carregar, estadoInicial, salvar } from './lib/storage'
-import { grupoDe } from './lib/grupos'
+import { ehDiaDaProva, sincronizarProva } from './lib/prova'
 import { addDias, diffDias, hojeISO } from './lib/dates'
 
-// O dia da prova (não a véspera de descanso) não é reagendado.
-const ehDiaDaProva = (d: DiaEstudo) =>
-  d.relevancia === 'Especial' && grupoDe(d.disciplina) === 'Prova e Descanso' && /prova/i.test(d.disciplina)
 
 export function useStore() {
   const [estado, setEstado] = useState<Estado>(carregar)
@@ -53,7 +50,15 @@ export function useStore() {
     })
   }, [])
 
-  const configurar = useCallback((patch: Partial<Estado>) => setEstado((e) => ({ ...e, ...patch })), [])
+  const configurar = useCallback(
+    (patch: Partial<Estado>) =>
+      setEstado((e) => ({
+        ...e,
+        ...patch,
+        dias: patch.dataProva ? sincronizarProva(e.dias, patch.dataProva) : e.dias,
+      })),
+    [],
+  )
   const importar = useCallback((e: Estado) => setEstado(e), [])
   const resetar = useCallback(() => setEstado(estadoInicial()), [])
 

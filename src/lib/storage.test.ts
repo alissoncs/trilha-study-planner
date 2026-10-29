@@ -22,6 +22,13 @@ describe('normalizar', () => {
     expect(e!.dataProva).toBe('2027-01-31')
     expect(e!.dias[0].revisoes).toEqual({ r7: '2026-10-01', r14: null, r30: null })
   })
+  it('corrige a prova salva como 31/12/2026 e alinha o dia da prova do cronograma', () => {
+    const e = estadoInicial()
+    const n = normalizar({ ...JSON.parse(JSON.stringify(e)), dataProva: '2026-12-31' })!
+    expect(n.dataProva).toBe('2027-01-31')
+    const prova = n.dias.find((d) => /DIA DA PROVA/i.test(d.disciplina))!
+    expect(prova.data).toBe('2027-01-31')
+  })
   it('usa fallback para intervalos e limite inválidos', () => {
     const e = normalizar({ version: 2, dias: [diaV2()], intervalos: { r7: 0, r14: 'x', r30: 20 }, limiteAcertos: 500 })!
     expect(e.intervalos).toEqual({ r7: 7, r14: 14, r30: 20 })

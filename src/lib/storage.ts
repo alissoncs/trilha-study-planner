@@ -1,12 +1,13 @@
 import type { Cargo, DiaEstudo, Estado, Relevancia, RevKey, Status } from '../types'
 import seed from '../data/seed.json'
 import { hojeISO } from './dates'
+import { sincronizarProva } from './prova'
 
 const KEY = 'trilha:v1'
 
 export const estadoInicial = (): Estado => ({
   version: 2,
-  dias: structuredClone(seed) as Estado['dias'],
+  dias: sincronizarProva(structuredClone(seed) as Estado['dias'], '2027-01-31'),
   dataProva: '2027-01-31',
   intervalos: { r7: 7, r14: 14, r30: 30 },
   cargo: 'tecnico',
@@ -116,7 +117,9 @@ export function normalizar(e: unknown): Estado | null {
   let dataProva = base.dataProva
   if (e.dataProva !== undefined) {
     if (!isISO(e.dataProva)) return null
-    dataProva = e.version === 1 && e.dataProva === '2026-12-27' ? base.dataProva : e.dataProva
+    // 27/12 e 31/12/2026 eram datas erradas da prova (a prova do TRT-4 é em 31/01/2027).
+    const errada = e.dataProva === '2026-12-31' || (e.version === 1 && e.dataProva === '2026-12-27')
+    dataProva = errada ? base.dataProva : e.dataProva
   }
 
   const intervalos = { ...base.intervalos }
@@ -132,7 +135,7 @@ export function normalizar(e: unknown): Estado | null {
 
   return {
     version: 2,
-    dias,
+    dias: sincronizarProva(dias, dataProva),
     dataProva,
     intervalos,
     cargo,
